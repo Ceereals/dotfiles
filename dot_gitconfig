@@ -1,20 +1,3 @@
-[user]
-	name = Riccardo Romoli
-	email = riccardo.romoli@u2y.io
-	username = Ceereals
-[push]
-	default = current
-[pull]
-	rebase = false
-[commit]
-	gpgsign = true
-[init]
-	defaultBranch = main
-[gpg]
-	program = /usr/local/bin/gpg
-	format = openpgp
-[tag]
-	forceSignAnnotated = false
-[gpg "ssh"]
-	program = ssh-keygen
-	allowedSignersFile = ""
+[git]
+    autoCommit = true
+    autoPush = true
