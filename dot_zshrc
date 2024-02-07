@@ -1,7 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Exports
-
+export EDITOR="code --wait"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
 PATH=$(pyenv root)/shims:$PATH
@@ -27,11 +27,10 @@ eval "$(starship init zsh)"
 
 # Load Direnv
 eval "$(direnv hook zsh)"
-
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # pnpm
-export PNPM_HOME="/Users/riccardoromoli/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
