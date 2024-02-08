@@ -17,7 +17,6 @@ packages:
       - 'mysql-client'
       - 'htop'
       - 'grep'
-      - 'antibody'
     casks:
       - 'arc'
       - 'spotify'
@@ -30,4 +29,3 @@ packages:
       - 'font-fira-code'
       - 'font-fira-code-nerd-font'
       - 'font-hack-nerd-font'
-      - 'font-sarasa-nerd' 
