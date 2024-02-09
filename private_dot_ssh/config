@@ -1,0 +1,14 @@
+Host RiccardoRomoliU2Y
+  HostName github.com
+  User git
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+Host Ceereals
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
