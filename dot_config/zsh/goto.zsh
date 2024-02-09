@@ -1,4 +1,4 @@
 autoload -Uz compinit
 compinit
 
-source $(brew --prefix)/etc/bash_completion.d/goto.sh
+# source $(brew --prefix)/etc/bash_completion.d/goto.sh
