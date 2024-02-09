@@ -1,7 +1,7 @@
 [includeIf "gitdir:~/personal/"]
     path = ~/.config/git/config.personal
 
-[includeIf "gitdir:~/.local/share/chezmoi"]
+[includeIf "gitdir:~/.local/share/"]
     path = ~/.config/git/config.personal
 
 [includeIf "gitdir:~/work/"]
