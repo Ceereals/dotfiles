@@ -1,3 +1,8 @@
-[git]
-    autoCommit = true
-    autoPush = true
+[includeIf "gitdir:~/personal/"]
+    path = ~/.config/git/config.personal
+
+[includeIf "gitdir:~/.local/share/chezmoi"]
+    path = ~/.config/git/config.personal
+
+[includeIf "gitdir:~/work/"]
+    path = ~/.config/git/config.work
