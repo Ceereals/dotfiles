@@ -1,2 +1,6 @@
 [url "RiccardoRomoliU2Y:"]
     insteadOf = git@github.com:
+
+[user]
+    name = RiccardoRomoliU2Y
+    email = riccardo.romoli@u2y.io
