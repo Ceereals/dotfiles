@@ -9,8 +9,13 @@ brew {{ . | quote }}
 cask {{ . | quote }}
 {{ end -}}
 EOF
-nvm use --lts
-{{ range .packages.darwin.npm -}}
-npm install -g {{ . | quote }}
-{{ end -}}
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  alias nvm='unalias nvm node npm && . "$NVM_DIR"/nvm.sh && nvm'
+  alias node='unalias nvm node npm && . "$NVM_DIR"/nvm.sh && node'
+  alias npm='unalias nvm node npm && . "$NVM_DIR"/nvm.sh && npm'
+  {{ range .packages.darwin.npm -}}
+  npm install -g {{ . | quote }}
+  {{ end -}}
+fi
 {{ end -}}
