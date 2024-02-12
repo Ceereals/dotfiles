@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.os "darwin" -}}
-#!/bin/bash
+#!/bin/zsh
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 {{ range .packages.darwin.brews -}}
@@ -9,6 +9,7 @@ brew {{ . | quote }}
 cask {{ . | quote }}
 {{ end -}}
 EOF
+nvm use --lts
 {{ range .packages.darwin.npm -}}
 npm install -g {{ . | quote }}
 {{ end -}}
