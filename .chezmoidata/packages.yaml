@@ -23,6 +23,7 @@ packages:
       - 'visual-studio-code'
       - 'insomnia'
       - 'warp'
+      - 'tableplus'
       - 'maccy'
       - 'gitkraken'
       - 'slack'
