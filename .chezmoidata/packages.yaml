@@ -29,3 +29,5 @@ packages:
       - 'font-fira-code'
       - 'font-fira-code-nerd-font'
       - 'font-hack-nerd-font'
+    npm:
+      - '@bitwarden/cli'
