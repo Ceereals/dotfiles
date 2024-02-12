@@ -4,4 +4,4 @@
 [user]
     name = Ceereals
     email = romoliriccardo.rr@gmail.com
-    signingkey = $HOME/.ssh/id_ed25519_personal.pub
+    signingkey = ~/.ssh/id_ed25519_personal.pub
