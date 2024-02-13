@@ -4,6 +4,7 @@
 export EDITOR="code --wait"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:~/.composer/vendor/bin
+export PATH=$PATH:$HOME/.cargo/bin
 PATH=$(pyenv root)/shims:$PATH
 
 ENABLE_CORRECTION="true"
