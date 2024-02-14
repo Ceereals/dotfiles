@@ -9,7 +9,6 @@
 # alias dt="datree"
 
 # mac OS shortcuts
-# alias code="open -a 'Visual Studio Code'"
 
 
 
@@ -28,6 +27,10 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias pest='./vendor/bin/pest'
 alias run='docker-compose run --rm'
 
+
+# Workspace aliases
+alias work="cd ~/work"
+alias dev="cd ~/personal"
 # PHP
 
 installedPhpVersions=($(brew ls --versions | ggrep -E 'php(@.*)?\s' | ggrep -oP '(?<=\s)\d\.\d' | uniq | sort))
