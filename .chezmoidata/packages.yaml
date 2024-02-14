@@ -8,7 +8,6 @@ packages:
       - 'wget'
       - 'toilet'
       - 'tmux'
-      - 'starship'
       - 'pnpm'
       - 'openjdk'
       - 'openvpn'
