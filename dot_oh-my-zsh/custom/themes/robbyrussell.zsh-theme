@@ -1,9 +1,9 @@
 
-
+RPROMPT="%{$fg[blue]%}%T%{$reset_color%}"
 
 function node_prompt_version {
     if which node &> /dev/null; then
-        echo -n "%{$fg_bold[blue]%}\udb80\udf99(%{$fg[red]%}$(node -v)%{$fg[blue]%}) %{$reset_color%}"
+        echo -n "%{$fg_bold[blue]%}\ue718(%{$fg[red]%}$(node -v)%{$fg[blue]%}) %{$reset_color%}"
     fi
 }
 
