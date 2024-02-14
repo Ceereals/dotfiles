@@ -80,7 +80,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:~/.composer/vendor/bin
 export PATH=$PATH:$HOME/.cargo/bin
 PATH=$(pyenv root)/shims:$PATH
-export EDITOR="code --wait"
 
 
 ENABLE_CORRECTION="true"
