@@ -112,3 +112,5 @@ fi
 [[ -f ~/.config/zsh/warp.zsh ]] && source ~/.config/zsh/warp.zsh
 # [[ -f ~/.config/zsh/goto.zsh ]] && source ~/.config/zsh/goto.zsh
 [[ -f ~/.config/zsh/pnpm.zsh ]] && source ~/.config/zsh/pnpm.zsh
+
+eval "$(zoxide init --cmd cd zsh)"
