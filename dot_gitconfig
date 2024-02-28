@@ -1,5 +1,5 @@
 [core]
-    filemode = false
+    fileMode = false
 
 [includeIf "gitdir:~/personal/"]
     path = ~/.config/git/config.personal
