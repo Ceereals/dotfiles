@@ -16,7 +16,7 @@ Host Ceereals
 Host staging-forge
   HostName 49.13.53.216
   User forge
-  IdentityFile ~/.ssh/forge-staging
+  IdentityFile ~/.ssh/forge_staging
   IdentitiesOnly yes
   AddKeysToAgent yes
   UseKeychain yes
