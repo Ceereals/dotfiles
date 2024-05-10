@@ -13,10 +13,10 @@ Host Ceereals
   AddKeysToAgent yes
   UseKeychain yes
 
-Host staging-hetzner
+Host staging-forge
   HostName 49.13.53.216
   User forge
-  IdentityFile ~/.ssh/staging-hetzner
+  IdentityFile ~/.ssh/forge-staging
   IdentitiesOnly yes
   AddKeysToAgent yes
   UseKeychain yes
