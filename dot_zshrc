@@ -118,3 +118,5 @@ fi
 [[ -f ~/.config/zsh/pnpm.zsh ]] && source ~/.config/zsh/pnpm.zsh
 
 eval "$(zoxide init --cmd cd zsh)"
+# Lando
+export PATH="/Users/riccardoromoli/.lando/bin${PATH+:$PATH}"; #landopath
