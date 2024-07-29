@@ -14,5 +14,3 @@
     format = ssh
 [commit]
     gpgsign = true
-[alias]
-    st = status
