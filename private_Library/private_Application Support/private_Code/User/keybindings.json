@@ -1,0 +1,16 @@
+// Inserire in questo file i tasti di scelta rapida per eseguire l'override di quelli predefinitiauto[]
+[
+  {
+    "key": "cmd+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+n",
+    "command": "extension.advancedNewFile",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "alt+cmd+n",
+    "command": "-extension.advancedNewFile"
+  }
+]
