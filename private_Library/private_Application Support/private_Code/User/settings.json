@@ -1,0 +1,373 @@
+{
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar",
+    },
+    "atlascode.jira.enabled": true,
+    "atlascode.jira.jqlList": [
+        {
+            "enabled": true,
+            "id": "b57dbabc-ab70-4435-b2f4-d34166780bfd",
+            "monitor": true,
+            "name": "My up2you Issues",
+            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+            "siteId": "8401a492-c1f0-4c45-82cc-fe310112fa36"
+        }
+    ],
+    "atlascode.jira.lastCreateSiteAndProject": {
+        "projectKey": "API",
+        "siteId": "8401a492-c1f0-4c45-82cc-fe310112fa36"
+    },
+    "atlascode.jira.startWorkBranchTemplate.customPrefixes": [
+        "features",
+        "fixes"
+    ],
+    "atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}/#{{{issueKey}}}",
+    "bladeFormatter.format.sortTailwindcssClasses": true,
+    "bracketPairColorizer.depreciation-notice": false,
+    "color-highlight.markerType": "foreground",
+    "dart.debugExternalPackageLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "dart.flutterHotReloadOnSave": "always",
+    "dart.hotReloadProgress": "statusBar",
+    "dart.showInspectorNotificationsForWidgetErrors": false,
+    "editor.accessibilitySupport": "off",
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "FiraCode Nerd Font,Hack Nerd Font,Fira Code,Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.linkedEditing": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderFinalNewline": "off",
+    "editor.snippetSuggestions": "bottom",
+    "editor.stickyScroll.enabled": true,
+    "editor.suggestSelection": "first",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true
+    },
+    "files.trimFinalNewlines": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.ignoreLegacyWarning": true,
+    "git.suggestSmartCommit": false,
+    "gitblame.inlineMessageEnabled": true,
+    "github.copilot.advanced": {},
+    "github.copilot.enable": {
+        "*": true,
+        "javascript": true,
+        "markdown": true,
+        "php": true,
+        "plaintext": true,
+        "shellscript": true,
+        "vue": true,
+        "yaml": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "omnisharp.useGlobalMono": "always",
+    "php.validate.run": "onType",
+    "phpformatter.logging": true,
+    "phpformatter.pharPath": "/usr/local/bin/php-cs-fixer",
+    "phpformatter.phpPath": "/opt/homebrew/bin/php",
+    "prettier.jsxSingleQuote": true,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "python.analysis.exclude": [
+        "*.py"
+    ],
+    "quokka.automaticRestart": true,
+    "rapidapi.terminalLink.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "sourcekit-lsp.inlayHints.enabled": true,
+    "sourcekit-lsp.serverArguments": [
+        "-Xswiftc",
+        "-sdk",
+        "-Xswiftc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+        "-Xswiftc",
+        "-target",
+        "-Xswiftc",
+        "x86_64-apple-ios13.6-simulator"
+    ],
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "ngClass",
+        "otherClasses"
+    ],
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.includeLanguages": {
+        "php": "html",
+        "vue": "html"
+    },
+    "terminal.external.osxExec": "Warp.app",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.integrated.fontWeightBold": "bold",
+    "terminal.integrated.shellIntegration.decorationsEnabled": "both",
+    "terminal.integrated.shellIntegration.enabled": true,
+    "vitest.enable": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.commandCenter": true,
+    "workbench.iconTheme": "vscode-icons",
+    "yaml.schemas": {
+        "file:///Users/riccardoromoli/.vscode/extensions/atlassian.atlascode-3.0.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "yinfei.luahelper"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "cweijan.vscode-database-client2"
+    },
+    "standard.autoFixOnSave": true,
+    "gitlens.experimental.generateCommitMessagePrompt": "Commit messages must have a short description that is less than 50 chars followed by a newline and a more detailed description.- Write concisely using an informal tone and avoid specific names from the code, using conventional commit including icons (ex: fix: :bug:, refactor: :art:, etc..)",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 2,
+    "editor.minimap.autohide": true,
+    "luahelper.format.tab_width": 2,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.detectIndentation": false,
+    "editor.indentSize": "tabSize",
+    "sonarlint.rules": {
+        "typescript:S1440": {
+            "level": "on"
+        },
+        "typescript:S3513": {
+            "level": "on"
+        },
+        "typescript:S4326": {
+            "level": "on"
+        },
+        "typescript:S909": {
+            "level": "on"
+        },
+        "typescript:S4139": {
+            "level": "on"
+        },
+        "typescript:S1535": {
+            "level": "on"
+        },
+        "typescript:S126": {
+            "level": "on"
+        },
+        "typescript:S3533": {
+            "level": "on"
+        },
+        "typescript:S1539": {
+            "level": "on"
+        },
+        "typescript:S131": {
+            "level": "on"
+        },
+        "typescript:S1821": {
+            "level": "on"
+        },
+        "typescript:S4327": {
+            "level": "on"
+        },
+        "typescript:S2138": {
+            "level": "on"
+        },
+        "typescript:S3973": {
+            "level": "on"
+        },
+        "typescript:S1105": {
+            "level": "on"
+        },
+        "typescript:S1528": {
+            "level": "on"
+        },
+        "typescript:S3524": {
+            "level": "on"
+        },
+        "typescript:S2424": {
+            "level": "on"
+        },
+        "typescript:S3525": {
+            "level": "on"
+        },
+        "typescript:S1066": {
+            "level": "on"
+        },
+        "typescript:S139": {
+            "level": "on"
+        },
+        "typescript:S3003": {
+            "level": "on"
+        },
+        "typescript:S134": {
+            "level": "on"
+        },
+        "typescript:S121": {
+            "level": "on"
+        },
+        "typescript:S1541": {
+            "level": "on"
+        },
+        "typescript:S1525": {
+            "level": "on"
+        },
+        "typescript:S3317": {
+            "level": "on"
+        },
+        "typescript:S4157": {
+            "level": "on"
+        },
+        "typescript:S4328": {
+            "level": "on"
+        },
+        "typescript:S3514": {
+            "level": "on"
+        },
+        "typescript:S6480": {
+            "level": "on"
+        },
+        "typescript:S1067": {
+            "level": "on"
+        },
+        "typescript:S1116": {
+            "level": "on"
+        },
+        "typescript:S113": {
+            "level": "on"
+        },
+        "typescript:S104": {
+            "level": "on"
+        },
+        "typescript:S100": {
+            "level": "on"
+        },
+        "typescript:S1530": {
+            "level": "on"
+        },
+        "typescript:S138": {
+            "level": "on"
+        },
+        "typescript:S3801": {
+            "level": "on"
+        },
+        "typescript:S881": {
+            "level": "on"
+        },
+        "typescript:S4023": {
+            "level": "on"
+        },
+        "typescript:S2260": {
+            "level": "on"
+        },
+        "typescript:S103": {
+            "level": "on"
+        },
+        "typescript:S1131": {
+            "level": "on"
+        }
+    },
+    "sonarlint.connectedMode.connections.sonarqube": [
+        {
+            "serverUrl": "https://sonarqube.u2y.io",
+            "connectionId": "https-sonarqube-u2y-io"
+        }
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "svg.preview.mode": "svg",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.autoSave": "afterDelay",
+    "gitlens.ai.experimental.provider": "openai",
+    "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+    "workbench.colorTheme": "GitHub Dark",
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "i18n-ally.enabledFrameworks": [
+        "vue"
+    ],
+    "i18n-ally.extract.autoDetect": true,
+    "i18n-ally.usage.scanningIgnore": [
+        "vendor/*",
+        "public/vendor/*",
+        "resources/lang/vendor/nova/*"
+    ],
+    "vue.server.maxOldSpaceSize": 4096,
+    "typescript.tsserver.maxTsServerMemory": 4096,
+    "typescript.tsserver.nodePath": "node",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "prisma.showPrismaDataPlatformNotification": false,
+    "formatAll.excludeFolders": [
+        "vendor",
+        "storage",
+        "public",
+        "lando",
+        "bootstrap",
+        "node_modules",
+        "out",
+        ".vscode-test",
+        "media"
+    ],
+    "github.copilot.editor.enableAutoCompletions": true,
+    "gitlens.ai.experimental.model": "openai:gpt-4o",
+    "supermaven.logFilePath": "~/.supermaven/log.txt",
+    "editor.minimap.enabled": false,
+    "supermaven.":
+}
