@@ -369,5 +369,7 @@
     "gitlens.ai.experimental.model": "openai:gpt-4o",
     "supermaven.logFilePath": "~/.supermaven/log.txt",
     "editor.minimap.enabled": false,
-    "test": "test"
+    "vscode_custom_css.imports": [
+        "file:///Users/riccardoromoli/.code/custom.css"
+    ]
 }
