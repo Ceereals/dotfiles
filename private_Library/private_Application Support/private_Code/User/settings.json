@@ -369,5 +369,5 @@
     "gitlens.ai.experimental.model": "openai:gpt-4o",
     "supermaven.logFilePath": "~/.supermaven/log.txt",
     "editor.minimap.enabled": false,
-    "supermaven.":
+    "test": "test"
 }
