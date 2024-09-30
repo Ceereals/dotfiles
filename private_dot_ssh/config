@@ -25,3 +25,5 @@ Host staging-forge
   IdentitiesOnly yes
   AddKeysToAgent yes
   UseKeychain yes
+
+Host 
