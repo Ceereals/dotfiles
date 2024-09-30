@@ -27,7 +27,7 @@ Host staging-forge
   UseKeychain yes
 
 Host prod-platform
-    HostName 
+    HostName 15.237.94.126
     User forge
     IdentityFile ~/.ssh/prod-platform
     IdentitiesOnly yes
