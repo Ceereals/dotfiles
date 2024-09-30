@@ -26,4 +26,10 @@ Host staging-forge
   AddKeysToAgent yes
   UseKeychain yes
 
-Host 
+Host prod-platform
+    HostName 
+    User forge
+    IdentityFile ~/.ssh/prod-platform
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
