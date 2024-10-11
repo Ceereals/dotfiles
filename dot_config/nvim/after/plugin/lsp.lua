@@ -9,6 +9,7 @@ lsp_zero.format_on_save({
 	servers = {
 		['biome'] = { 'javascript', 'typescript' },
 		['rust_analyzer'] = { 'rust' },
+		['pint'] = { 'php' }
 	}
 })
 
