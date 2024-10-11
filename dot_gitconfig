@@ -1,6 +1,6 @@
 [core]
     fileMode = false
-
+    editor = nvim
 [includeIf "gitdir:~/personal/"]
     path = ~/.config/git/config.personal
 
