@@ -14,7 +14,7 @@ local opts = {
 		},
 		-- Example keymaps (this doesn't create any)
 		keymaps = {
-			['Oil'] = {
+			['Test'] = {
 				{ 'Toggle oil (closes without saving)', '<leader>q' },
 				{ 'Select entry', '⏎' },
 				{ 'Select entry', 'l' },
