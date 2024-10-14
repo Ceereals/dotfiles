@@ -4,7 +4,7 @@ local vue_language_server_path = mason_registry.get_package('vue-language-server
     '/node_modules/@vue/language-server'
 
 require("mason-lspconfig").setup({
-	ensure_installed = { 'lua_ls', 'rust_analyzer', 'biome', 'ts_ls', 'volar' },
+	ensure_installed = { 'lua_ls', 'rust_analyzer', 'biome', 'ts_ls', 'volar', 'phpactor' },
 	handlers = {
 		function(server_name)
 			if server_name == 'volar' then
