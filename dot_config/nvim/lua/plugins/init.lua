@@ -1,5 +1,6 @@
 return {
 
+
 	{
 		'nvim-telescope/telescope.nvim',
 		dependecies = { 'nvim-lua/plenary.nvim' }
@@ -28,5 +29,15 @@ return {
 	{
 		'smartinellimarco/nvcheatsheet.nvim'
 	},
-	{ "supermaven-inc/supermaven-nvim" }
+	{ "supermaven-inc/supermaven-nvim" },
+	{ 'akinsho/toggleterm.nvim',       version = "*", config = true },
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
+
 }
