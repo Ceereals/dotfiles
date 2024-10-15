@@ -2,6 +2,7 @@ require("conform").setup({
   formatters_by_ft = {
     php = { "pint", "php_cs_fixer", stop_after_first = true },
     javascript = { "prettierd", "prettier", stop_after_first = true },
+    json = { "biome" }
   },
   default_format_opts = {
     lsp_format = "fallback",
