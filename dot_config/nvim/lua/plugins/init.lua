@@ -42,7 +42,7 @@ return {
 			},
 			-- Example keymaps (this doesn't create any)
 			keymaps = {
-				['Oil'] = {
+				['Commands'] = {
 					{ 'Toggle oil (closes without saving)', '<leader>q' },
 					{ 'Select entry', '⏎' },
 					{ 'Select entry', 'l' },
@@ -82,6 +82,10 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
+	},
+	{
+		'stevearc/conform.nvim',
+		opts = {},
 	},
 
 }
