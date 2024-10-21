@@ -21,3 +21,5 @@
   keepBackup = false
 [mergetool "nvimdiff"]
   layout = "LOCAL,BASE,REMOTE / MERGED"
+[pull]
+	rebase = true
