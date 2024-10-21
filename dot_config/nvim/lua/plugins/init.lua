@@ -22,7 +22,6 @@ return {
   {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
   },
   { 'm4xshen/autoclose.nvim' },
   { 'onsails/lspkind.nvim' },
@@ -87,5 +86,17 @@ return {
     'stevearc/conform.nvim',
     opts = {},
   },
-
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+  { 'numToStr/Comment.nvim' },
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- optional
+      "neovim/nvim-lspconfig",       -- optional
+    },
+    opts = {}                        -- your configuration
+  }
 }

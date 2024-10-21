@@ -1,4 +1,5 @@
-local lsp_zero = require('lsp-zero')
+-- require ufo module that is in the same folder
+local ufo_capabilities = require('ceereals.ufocapabilities')
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = 'yes'
@@ -8,7 +9,8 @@ local lspconfig_defaults = require('lspconfig').util.default_config
 lspconfig_defaults.capabilities = vim.tbl_deep_extend(
   'force',
   lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
+  require('cmp_nvim_lsp').default_capabilities(),
+  ufo_capabilities
 )
 -- lsp_attach is where you enable features that only work
 -- if there is a language server active in the file
@@ -24,6 +26,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+    vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({ 'n', 'x' }, '<F3>', function()
       require("conform").format({ async = false, timeout_ms = 10000, bufnr = event.buf })
     end, opts)
