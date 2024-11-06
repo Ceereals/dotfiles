@@ -1,2 +1,4 @@
 key.txt.age
 .config/emacs/.local/
+.config/emacs/.git/
+.config/emacs/.github/
