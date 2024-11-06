@@ -95,8 +95,20 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-telescope/telescope.nvim", -- optional
-      "neovim/nvim-lspconfig",       -- optional
+      "neovim/nvim-lspconfig",         -- optional
     },
-    opts = {}                        -- your configuration
-  }
+    opts = {}                          -- your configuration
+  },
+  { 'windwp/nvim-ts-autotag' },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    lazy = false,
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
 }

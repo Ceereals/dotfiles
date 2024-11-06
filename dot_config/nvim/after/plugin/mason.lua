@@ -43,6 +43,22 @@ require("mason-lspconfig").setup({
         }
         return
       end
+      if server_name == 'mdx_analyzer' then
+        print("ciao!")
+        require('lspconfig')[server_name].setup {
+          filetypes = { "mdx", 'markdown' },
+        }
+        return
+      end
+      if server_name == 'phpactor' then
+        require('lspconfig')[server_name].setup {
+          init_options = {
+            ["language_server_phpstan.enabled"] = false,
+            ["language_server_psalm.enabled"] = false,
+          }
+        }
+      end
+
       require('lspconfig')[server_name].setup {}
     end,
   }
