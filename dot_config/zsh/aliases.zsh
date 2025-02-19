@@ -25,7 +25,7 @@ alias gp="git push"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias pest='./vendor/bin/pest'
 alias run='docker-compose run --rm'
-
+alias rm-completions='rm rm "$ZSH_COMPDUMP"'
 
 # Workspace aliases
 alias work="cd ~/work"
