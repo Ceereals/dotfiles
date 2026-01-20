@@ -1,0 +1,16 @@
+# Common ignores
+README.md
+LICENSE
+.git
+
+# Server profile: ignora TUTTO tranne tmux e vim
+{{ if eq .profile "server" }}
+dot_config/**
+dot_bashrc
+dot_XCompose
+{{ end }}
+
+# PC profile: ignora vim (usi nvim)
+{{ if eq .profile "pc" }}
+dot_vimrc
+{{ end }}

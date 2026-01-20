@@ -1,0 +1,9 @@
+{{- $profile := "" -}}
+{{- if hasKey . "profile" -}}
+{{-   $profile = .profile -}}
+{{- else -}}
+{{-   $profile = promptChoice "Select profile" (list "pc" "server") -}}
+{{- end -}}
+
+[data]
+    profile = "{{ $profile }}"
