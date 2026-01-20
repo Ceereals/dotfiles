@@ -1,0 +1,8 @@
+{
+  "includeNeovim": true,
+  "includeVencord": false,
+  "includeZed": true,
+  "includeVscode": true,
+  "includeGtk": false,
+  "enableAppOverrides": true
+}

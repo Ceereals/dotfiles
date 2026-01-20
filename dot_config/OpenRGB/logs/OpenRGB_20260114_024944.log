@@ -1,0 +1,374 @@
+    OpenRGB v0.9+ (1.0rc2)
+    Commit:  from 
+    Launched: 20260114_024944
+====================================================================================================
+
+51    |Info:    [ResourceManager] Saving detector settings
+52    |Info:    [ResourceManager] Initializing HID interfaces: Success
+52    |Info:    ------------------------------------------------------
+52    |Info:    |               Start device detection               |
+52    |Info:    ------------------------------------------------------
+55    |Info:    ------------------------------------------------------
+55    |Info:    |             Detecting I2C interfaces               |
+55    |Info:    ------------------------------------------------------
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:7550 Subsystem: 1043:061A
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-20 Device 1022:790B Subsystem: 1462:7E53
+61    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:7550 Subsystem: 1043:061A
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-19 Device 1022:790B Subsystem: 1462:7E53
+61    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-17 Device 0000:0000 Subsystem: 0000:0000
+61    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+61    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-15 Device 0000:0000 Subsystem: 0000:0000
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:7550 Subsystem: 1043:061A
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-13 Device 1002:13C0 Subsystem: 1462:7E53
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:7550 Subsystem: 1043:061A
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1002:13C0 Subsystem: 1462:7E53
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:7550 Subsystem: 1043:061A
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 0000:0000 Subsystem: 0000:0000
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-18 Device 1022:790B Subsystem: 1462:7E53
+61    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+61    |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-16 Device 0000:0000 Subsystem: 0000:0000
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:7550 Subsystem: 1043:061A
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-14 Device 1002:13C0 Subsystem: 1462:7E53
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:7550 Subsystem: 1043:061A
+61    |Info:    [ResourceManager] Registering I2C interface: /dev/i2c-12 Device 1002:13C0 Subsystem: 1462:7E53
+61    |Info:    ------------------------------------------------------
+61    |Info:    |               Detecting I2C devices                |
+61    |Info:    ------------------------------------------------------
+1066  |Info:    ------------------------------------------------------
+1066  |Info:    |            Detecting I2C DIMM modules              |
+1066  |Info:    ------------------------------------------------------
+2130  |Info:    [ResourceManager] Detected occupied slot 2, bus 14, type DDR5
+3091  |Info:    [ResourceManager] Detected occupied slot 4, bus 14, type DDR5
+3111  |Info:    ------------------------------------------------------
+3112  |Info:    |               Detecting I2C PCI devices            |
+3112  |Info:    ------------------------------------------------------
+3112  |Info:    ------------------------------------------------------
+3112  |Info:    |               Detecting HID devices                |
+3112  |Info:    ------------------------------------------------------
+3113  |Info:    [Sony DualSense] Registering RGB controller
+3164  |Info:    No matching driver found for MSI MAG B850 TOMAHAWK WIFI (MS-7E53), packet length = 0
+3164  |Info:    ------------------------------------------------------
+3164  |Info:    |            Detecting libusb HID devices            |
+3164  |Info:    ------------------------------------------------------
+3186  |Info:    ------------------------------------------------------
+3186  |Info:    |              Detecting other devices               |
+3186  |Info:    ------------------------------------------------------
+3195  |Info:    [ResourceManager] Calling Post-detection callbacks
+3195  |Info:    ------------------------------------------------------
+3195  |Info:    |                Detection completed                 |
+3195  |Info:    ------------------------------------------------------
+127592|ERROR:   [OpenRGBPluginsPage] Failed to install plugin: filesystem error: cannot copy: No such file or directory [] [/home/ceereals/.config/OpenRGB/plugins/]
+153729|Info:    [ResourceManager] Initializing HID interfaces: Success
+153729|Info:    ------------------------------------------------------
+153729|Info:    |               Start device detection               |
+153729|Info:    ------------------------------------------------------
+153733|Info:    ------------------------------------------------------
+153733|Info:    |             Detecting I2C interfaces               |
+153733|Info:    ------------------------------------------------------
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:7550 Subsystem: 1043:061A
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-20 Device 1022:790B Subsystem: 1462:7E53
+153733|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:7550 Subsystem: 1043:061A
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-19 Device 1022:790B Subsystem: 1462:7E53
+153733|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-17 Device 0000:0000 Subsystem: 0000:0000
+153733|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+153733|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-15 Device 0000:0000 Subsystem: 0000:0000
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:7550 Subsystem: 1043:061A
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-13 Device 1002:13C0 Subsystem: 1462:7E53
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:7550 Subsystem: 1043:061A
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1002:13C0 Subsystem: 1462:7E53
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:7550 Subsystem: 1043:061A
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 0000:0000 Subsystem: 0000:0000
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-18 Device 1022:790B Subsystem: 1462:7E53
+153733|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+153733|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-16 Device 0000:0000 Subsystem: 0000:0000
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:7550 Subsystem: 1043:061A
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-14 Device 1002:13C0 Subsystem: 1462:7E53
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:7550 Subsystem: 1043:061A
+153733|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-12 Device 1002:13C0 Subsystem: 1462:7E53
+153733|Info:    ------------------------------------------------------
+153733|Info:    |               Detecting I2C devices                |
+153733|Info:    ------------------------------------------------------
+154742|Info:    ------------------------------------------------------
+154742|Info:    |            Detecting I2C DIMM modules              |
+154742|Info:    ------------------------------------------------------
+154836|Info:    [ResourceManager] Detected occupied slot 2, bus 14, type DDR5
+154841|Info:    [ResourceManager] Detected occupied slot 4, bus 14, type DDR5
+154861|Info:    ------------------------------------------------------
+154861|Info:    |               Detecting I2C PCI devices            |
+154861|Info:    ------------------------------------------------------
+154862|Info:    ------------------------------------------------------
+154862|Info:    |               Detecting HID devices                |
+154862|Info:    ------------------------------------------------------
+154862|Info:    [Sony DualSense] Registering RGB controller
+154862|Info:    No matching driver found for MSI MAG B850 TOMAHAWK WIFI (MS-7E53), packet length = 0
+154862|Info:    ------------------------------------------------------
+154862|Info:    |            Detecting libusb HID devices            |
+154862|Info:    ------------------------------------------------------
+154876|Info:    ------------------------------------------------------
+154876|Info:    |              Detecting other devices               |
+154876|Info:    ------------------------------------------------------
+154878|Warning: [LEDStripController] port value cannot be left empty.
+154881|Info:    [ResourceManager] Calling Post-detection callbacks
+154881|Info:    ------------------------------------------------------
+154881|Info:    |                Detection completed                 |
+154881|Info:    ------------------------------------------------------
+168713|Info:    [ResourceManager] Initializing HID interfaces: Success
+168713|Info:    ------------------------------------------------------
+168713|Info:    |               Start device detection               |
+168713|Info:    ------------------------------------------------------
+168717|Info:    ------------------------------------------------------
+168717|Info:    |             Detecting I2C interfaces               |
+168717|Info:    ------------------------------------------------------
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:7550 Subsystem: 1043:061A
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-20 Device 1022:790B Subsystem: 1462:7E53
+168717|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:7550 Subsystem: 1043:061A
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-19 Device 1022:790B Subsystem: 1462:7E53
+168717|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-17 Device 0000:0000 Subsystem: 0000:0000
+168717|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+168717|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-15 Device 0000:0000 Subsystem: 0000:0000
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:7550 Subsystem: 1043:061A
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-13 Device 1002:13C0 Subsystem: 1462:7E53
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:7550 Subsystem: 1043:061A
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1002:13C0 Subsystem: 1462:7E53
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:7550 Subsystem: 1043:061A
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 0000:0000 Subsystem: 0000:0000
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-18 Device 1022:790B Subsystem: 1462:7E53
+168717|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+168717|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+168717|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+168718|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-16 Device 0000:0000 Subsystem: 0000:0000
+168718|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:7550 Subsystem: 1043:061A
+168718|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-14 Device 1002:13C0 Subsystem: 1462:7E53
+168718|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:7550 Subsystem: 1043:061A
+168718|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-12 Device 1002:13C0 Subsystem: 1462:7E53
+168718|Info:    ------------------------------------------------------
+168718|Info:    |               Detecting I2C devices                |
+168718|Info:    ------------------------------------------------------
+169726|Info:    ------------------------------------------------------
+169726|Info:    |            Detecting I2C DIMM modules              |
+169726|Info:    ------------------------------------------------------
+169821|Info:    [ResourceManager] Detected occupied slot 2, bus 14, type DDR5
+169825|Info:    [ResourceManager] Detected occupied slot 4, bus 14, type DDR5
+169843|Info:    ------------------------------------------------------
+169843|Info:    |               Detecting I2C PCI devices            |
+169843|Info:    ------------------------------------------------------
+169844|Info:    ------------------------------------------------------
+169844|Info:    |               Detecting HID devices                |
+169844|Info:    ------------------------------------------------------
+169844|Info:    [Sony DualSense] Registering RGB controller
+169844|Info:    No matching driver found for MSI MAG B850 TOMAHAWK WIFI (MS-7E53), packet length = 0
+169844|Info:    ------------------------------------------------------
+169844|Info:    |            Detecting libusb HID devices            |
+169844|Info:    ------------------------------------------------------
+169858|Info:    ------------------------------------------------------
+169858|Info:    |              Detecting other devices               |
+169858|Info:    ------------------------------------------------------
+169860|Warning: [LEDStripController] port value cannot be left empty.
+169863|Info:    [ResourceManager] Calling Post-detection callbacks
+169863|Info:    ------------------------------------------------------
+169863|Info:    |                Detection completed                 |
+169863|Info:    ------------------------------------------------------
+170850|Info:    [ResourceManager] Initializing HID interfaces: Success
+170850|Info:    ------------------------------------------------------
+170850|Info:    |               Start device detection               |
+170850|Info:    ------------------------------------------------------
+170854|Info:    ------------------------------------------------------
+170854|Info:    |             Detecting I2C interfaces               |
+170854|Info:    ------------------------------------------------------
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:7550 Subsystem: 1043:061A
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-20 Device 1022:790B Subsystem: 1462:7E53
+170854|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:7550 Subsystem: 1043:061A
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-19 Device 1022:790B Subsystem: 1462:7E53
+170854|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-17 Device 0000:0000 Subsystem: 0000:0000
+170854|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+170854|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-15 Device 0000:0000 Subsystem: 0000:0000
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:7550 Subsystem: 1043:061A
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-13 Device 1002:13C0 Subsystem: 1462:7E53
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:7550 Subsystem: 1043:061A
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1002:13C0 Subsystem: 1462:7E53
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:7550 Subsystem: 1043:061A
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 0000:0000 Subsystem: 0000:0000
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-18 Device 1022:790B Subsystem: 1462:7E53
+170854|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+170854|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-16 Device 0000:0000 Subsystem: 0000:0000
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:7550 Subsystem: 1043:061A
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-14 Device 1002:13C0 Subsystem: 1462:7E53
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:7550 Subsystem: 1043:061A
+170854|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-12 Device 1002:13C0 Subsystem: 1462:7E53
+170854|Info:    ------------------------------------------------------
+170854|Info:    |               Detecting I2C devices                |
+170854|Info:    ------------------------------------------------------
+171864|Info:    ------------------------------------------------------
+171864|Info:    |            Detecting I2C DIMM modules              |
+171864|Info:    ------------------------------------------------------
+171957|Info:    [ResourceManager] Detected occupied slot 2, bus 14, type DDR5
+171961|Info:    [ResourceManager] Detected occupied slot 4, bus 14, type DDR5
+171979|Info:    ------------------------------------------------------
+171979|Info:    |               Detecting I2C PCI devices            |
+171979|Info:    ------------------------------------------------------
+171980|Info:    ------------------------------------------------------
+171980|Info:    |               Detecting HID devices                |
+171980|Info:    ------------------------------------------------------
+171980|Info:    [Sony DualSense] Registering RGB controller
+171981|Info:    No matching driver found for MSI MAG B850 TOMAHAWK WIFI (MS-7E53), packet length = 0
+171981|Info:    ------------------------------------------------------
+171981|Info:    |            Detecting libusb HID devices            |
+171981|Info:    ------------------------------------------------------
+171994|Info:    ------------------------------------------------------
+171994|Info:    |              Detecting other devices               |
+171994|Info:    ------------------------------------------------------
+171996|Warning: [LEDStripController] port value cannot be left empty.
+172000|Info:    [ResourceManager] Calling Post-detection callbacks
+172000|Info:    ------------------------------------------------------
+172000|Info:    |                Detection completed                 |
+172000|Info:    ------------------------------------------------------
+172735|Info:    [ResourceManager] Initializing HID interfaces: Success
+172735|Warning: [ResourceManager] Detection coroutine: assigned a new coroutine when one was already scheduled - probably two rescan events sent at once
+172735|Info:    ------------------------------------------------------
+172735|Info:    |               Start device detection               |
+172735|Info:    ------------------------------------------------------
+172738|Info:    ------------------------------------------------------
+172738|Info:    |             Detecting I2C interfaces               |
+172738|Info:    ------------------------------------------------------
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:7550 Subsystem: 1043:061A
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-20 Device 1022:790B Subsystem: 1462:7E53
+172738|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:7550 Subsystem: 1043:061A
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-19 Device 1022:790B Subsystem: 1462:7E53
+172738|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-17 Device 0000:0000 Subsystem: 0000:0000
+172738|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+172738|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-15 Device 0000:0000 Subsystem: 0000:0000
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:7550 Subsystem: 1043:061A
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-13 Device 1002:13C0 Subsystem: 1462:7E53
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:7550 Subsystem: 1043:061A
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1002:13C0 Subsystem: 1462:7E53
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:7550 Subsystem: 1043:061A
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 0000:0000 Subsystem: 0000:0000
+172738|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-18 Device 1022:790B Subsystem: 1462:7E53
+172739|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+172739|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+172739|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+172739|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-16 Device 0000:0000 Subsystem: 0000:0000
+172739|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:7550 Subsystem: 1043:061A
+172739|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-14 Device 1002:13C0 Subsystem: 1462:7E53
+172739|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:7550 Subsystem: 1043:061A
+172739|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-12 Device 1002:13C0 Subsystem: 1462:7E53
+172739|Info:    ------------------------------------------------------
+172739|Info:    |               Detecting I2C devices                |
+172739|Info:    ------------------------------------------------------
+173748|Info:    ------------------------------------------------------
+173748|Info:    |            Detecting I2C DIMM modules              |
+173748|Info:    ------------------------------------------------------
+173841|Info:    [ResourceManager] Detected occupied slot 2, bus 14, type DDR5
+173845|Info:    [ResourceManager] Detected occupied slot 4, bus 14, type DDR5
+173863|Info:    ------------------------------------------------------
+173863|Info:    |               Detecting I2C PCI devices            |
+173863|Info:    ------------------------------------------------------
+173864|Info:    ------------------------------------------------------
+173864|Info:    |               Detecting HID devices                |
+173864|Info:    ------------------------------------------------------
+173864|Info:    [Sony DualSense] Registering RGB controller
+173865|Info:    No matching driver found for MSI MAG B850 TOMAHAWK WIFI (MS-7E53), packet length = 0
+173865|Info:    ------------------------------------------------------
+173865|Info:    |            Detecting libusb HID devices            |
+173865|Info:    ------------------------------------------------------
+173878|Info:    ------------------------------------------------------
+173878|Info:    |              Detecting other devices               |
+173878|Info:    ------------------------------------------------------
+173880|Warning: [LEDStripController] port value cannot be left empty.
+173884|Info:    [ResourceManager] Calling Post-detection callbacks
+173884|Info:    ------------------------------------------------------
+173884|Info:    |                Detection completed                 |
+173884|Info:    ------------------------------------------------------
+179159|Info:    [ProfileManager] Profile loading: FAILED! for Sony DualSense @ HID: /dev/hidraw8
+187537|Info:    [ResourceManager] Initializing HID interfaces: Success
+187537|Info:    ------------------------------------------------------
+187537|Info:    |               Start device detection               |
+187537|Info:    ------------------------------------------------------
+187540|Info:    ------------------------------------------------------
+187540|Info:    |             Detecting I2C interfaces               |
+187540|Info:    ------------------------------------------------------
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-3 Device 1002:7550 Subsystem: 1043:061A
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-20 Device 1022:790B Subsystem: 1462:7E53
+187540|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-10 Device 0000:0000 Subsystem: 0000:0000
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-1 Device 1002:7550 Subsystem: 1043:061A
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-19 Device 1022:790B Subsystem: 1462:7E53
+187540|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-17 Device 0000:0000 Subsystem: 0000:0000
+187540|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+187540|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-15 Device 0000:0000 Subsystem: 0000:0000
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-6 Device 1002:7550 Subsystem: 1043:061A
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-13 Device 1002:13C0 Subsystem: 1462:7E53
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-4 Device 1002:7550 Subsystem: 1043:061A
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-11 Device 1002:13C0 Subsystem: 1462:7E53
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-2 Device 1002:7550 Subsystem: 1043:061A
+187540|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-0 Device 0000:0000 Subsystem: 0000:0000
+187541|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-18 Device 1022:790B Subsystem: 1462:7E53
+187541|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+187541|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-9 Device 0000:0000 Subsystem: 0000:0000
+187541|Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+187541|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-16 Device 0000:0000 Subsystem: 0000:0000
+187541|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-7 Device 1002:7550 Subsystem: 1043:061A
+187541|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-14 Device 1002:13C0 Subsystem: 1462:7E53
+187541|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-5 Device 1002:7550 Subsystem: 1043:061A
+187541|Info:    [ResourceManager] Registering I2C interface: /dev/i2c-12 Device 1002:13C0 Subsystem: 1462:7E53
+187541|Info:    ------------------------------------------------------
+187541|Info:    |               Detecting I2C devices                |
+187541|Info:    ------------------------------------------------------
+188551|Info:    ------------------------------------------------------
+188551|Info:    |            Detecting I2C DIMM modules              |
+188551|Info:    ------------------------------------------------------
+188645|Info:    [ResourceManager] Detected occupied slot 2, bus 14, type DDR5
+188649|Info:    [ResourceManager] Detected occupied slot 4, bus 14, type DDR5
+188667|Info:    ------------------------------------------------------
+188667|Info:    |               Detecting I2C PCI devices            |
+188667|Info:    ------------------------------------------------------
+188668|Info:    ------------------------------------------------------
+188668|Info:    |               Detecting HID devices                |
+188668|Info:    ------------------------------------------------------
+188668|Info:    [Sony DualSense] Registering RGB controller
+188668|Info:    No matching driver found for MSI MAG B850 TOMAHAWK WIFI (MS-7E53), packet length = 0
+188668|Info:    ------------------------------------------------------
+188668|Info:    |            Detecting libusb HID devices            |
+188668|Info:    ------------------------------------------------------
+188682|Info:    ------------------------------------------------------
+188682|Info:    |              Detecting other devices               |
+188682|Info:    ------------------------------------------------------
+188684|Warning: [LEDStripController] port value cannot be left empty.
+188687|Info:    [ResourceManager] Calling Post-detection callbacks
+188687|Info:    ------------------------------------------------------
+188687|Info:    |                Detection completed                 |
+188687|Info:    ------------------------------------------------------
