@@ -1,0 +1,10 @@
+// ────────────── Output Configuration ──────────────
+// You can run `niri msg outputs` to get the correct name for your displays.
+// You will have to remove "/-" and edit it before it takes effect.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+output "DP-1" {
+    mode "2560x1440@165.003"           // Highest mode reported by `niri msg outputs`
+    scale 1                            // 27" 1440p ≈ 108 PPI → scaling 1 is correct
+    variable-refresh-rate on-demand=true   // VRR only on fullscreen apps; safe for desktop
+}

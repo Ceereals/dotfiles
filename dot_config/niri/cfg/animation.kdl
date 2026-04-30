@@ -1,0 +1,41 @@
+    animations {
+        // Global multiplier — 1.0 normal, 0.85 = ~15% faster overall, 0 disables.
+        // Uncomment if you want a snappier feel (e.g. when laptop on battery).
+        // slowdown 0.85
+
+        // ─── Spring-driven (continuous) — high stiffness + critical damping = no overshoot, fast settle ───
+        workspace-switch {
+            spring damping-ratio=1.0 stiffness=1100 epsilon=0.0001
+        }
+        horizontal-view-movement {
+            spring damping-ratio=1.0 stiffness=1100 epsilon=0.0001     // scrolling-layout pan: most-felt animation
+        }
+        window-movement {
+            spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        }
+        window-resize {
+            spring damping-ratio=1.0 stiffness=1100 epsilon=0.0001
+        }
+        overview-open-close {
+            spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        }
+
+        // ─── Curve-driven (one-shot) — duration shorter + ease-out-expo = sharp start, soft arrival ───
+        window-open {
+            duration-ms 150
+            curve "ease-out-expo"
+        }
+        window-close {
+            duration-ms 130
+            curve "ease-out-cubic"
+        }
+        screenshot-ui-open {
+            duration-ms 250
+            curve "ease-out-quad"
+        }
+
+        // ─── Intentionally bouncy — config-error notification ───
+        config-notification-open-close {
+            spring damping-ratio=0.6 stiffness=1200 epsilon=0.001
+        }
+    }
