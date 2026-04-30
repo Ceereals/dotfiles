@@ -10,8 +10,9 @@ root: ~/Work/heu-monorepo
 
 windows:
   - editor: nvim .
-  - dev: pnpm dev
-  - lazydocker: lazydocker
+  - dev: pnpm denv:watch
+  - lazydocker: cd packages/denv && lazydocker
   - lazygit: lazygit
-  - opencode: c
+  - opencode: opencode
+  - claude: claude
   - terminal:
