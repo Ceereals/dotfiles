@@ -35,3 +35,4 @@ eval "$(~/.local/bin/mise activate bash)"
 eval "$(starship init bash)"
 source /usr/share/fzf/key-bindings.bash
 eval "$(zoxide init bash --cmd cd)"
+eval "$(try init ~/Work/tries)"
