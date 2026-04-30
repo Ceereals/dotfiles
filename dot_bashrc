@@ -21,6 +21,7 @@ export NVM_DIR="$HOME/.nvm"
 alias update='source ~/.bashrc'
 alias heu='tmuxinator start heu'
 alias cat='bat'
+alias cea='chezmoi edit --apply'
 alias py='python3'
 export SSH_AUTH_SOCK=/home/ceereals/.bitwarden-ssh-agent.sock
 export PATH="$HOME/.local/bin:$PATH"
