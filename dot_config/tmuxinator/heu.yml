@@ -1,0 +1,17 @@
+# ~/.config/tmuxinator/heu.yml
+# Tmuxinator configuration for heu-monorepo
+#
+# Usage:
+#   tmuxinator start heu
+#   tmuxinator stop heu
+
+name: heu
+root: ~/Work/heu-monorepo
+
+windows:
+  - editor: nvim .
+  - dev: pnpm dev
+  - lazydocker: lazydocker
+  - lazygit: lazygit
+  - opencode: c
+  - terminal:
