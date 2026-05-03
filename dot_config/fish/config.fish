@@ -1,5 +1,7 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 zoxide init fish | source
+starship init fish | source
+mise activate fish | source
 # overwrite greeting
 # potentially disabling fastfetch
 #function fish_greeting
@@ -8,3 +10,4 @@ zoxide init fish | source
 
 # opencode
 fish_add_path /home/ceereals/.opencode/bin
+

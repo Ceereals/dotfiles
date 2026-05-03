@@ -196,6 +196,9 @@
                     "iconColor": "none",
                     "id": "Brightness",
                     "textColor": "none"
+                },
+                {
+                    "id": "plugin:privacy-indicator"
                 }
             ]
         }
@@ -512,7 +515,7 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": false,
+        "autoUpdate": true,
         "notifyUpdates": true
     },
     "sessionMenu": {
