@@ -343,7 +343,7 @@
         ],
         "pinnedStatic": false,
         "position": "bottom",
-        "showDockIndicator": false,
+        "showDockIndicator": true,
         "showLauncherIcon": true,
         "sitOnFrame": false,
         "size": 1
@@ -390,7 +390,7 @@
                 "Up"
             ]
         },
-        "language": "",
+        "language": "en",
         "lockOnSuspend": true,
         "lockScreenAnimations": false,
         "lockScreenBlur": 0,

@@ -8,3 +8,8 @@ output "DP-1" {
     scale 1                            // 27" 1440p ≈ 108 PPI → scaling 1 is correct
     variable-refresh-rate on-demand=true   // VRR only on fullscreen apps; safe for desktop
 }
+
+output "DP-2" {
+    mode "2560x1440@100.000"
+    scale 1
+}
