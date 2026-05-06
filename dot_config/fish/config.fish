@@ -9,7 +9,3 @@ direnv hook fish | source
 #function fish_greeting
 #    # smth smth
 #end
-
-# opencode
-fish_add_path /home/ceereals/.opencode/bin
-

@@ -3,6 +3,11 @@
         clip-to-geometry true
     }
 
+    window-rule {
+        match app-id=r#"^steam_app_"#
+        open-fullscreen true
+    }
+
     layer-rule {
         match namespace="^noctalia-wallpaper*"
         place-within-backdrop true
