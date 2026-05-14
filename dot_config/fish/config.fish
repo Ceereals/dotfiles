@@ -4,8 +4,10 @@ starship init fish | source
 mise activate fish | source
 zoxide init --cmd cd fish | source
 direnv hook fish | source
+eval (try init ~/Work/tries | string collect)
 # overwrite greeting
 # potentially disabling fastfetch
 #function fish_greeting
 #    # smth smth
 #end
+alias cat=bat
