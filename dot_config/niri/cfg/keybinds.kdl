@@ -8,24 +8,24 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: Ghostty"            { spawn "ghostty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: Noctalia"        { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: DMS Spotlight"   { spawn-sh "dms ipc call spotlight toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: Firefox"              { spawn "firefox"; }
     MOD+E                               hotkey-overlay-title="File Manager: Nautilus"             { spawn "nautilus"; }
 
-    // ─── Audio Controls (Noctalia volume IPC, with OSD) ───
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
-    XF86AudioMute                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
-    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
+    // ─── Audio Controls (DMS audio IPC, with OSD) ───
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "dms ipc call audio increment 5"; }
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "dms ipc call audio decrement 5"; }
+    XF86AudioMute                       allow-when-locked=true { spawn-sh "dms ipc call audio mute"; }
+    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "dms ipc call audio micmute"; }
 
-    // ─── Brightness Controls (Noctalia OSD) ───
-    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
-    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
+    // ─── Brightness Controls (DMS OSD) ───
+    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "dms ipc call brightness increment 5 \"\""; }
+    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "dms ipc call brightness decrement 5 \"\""; }
 
-    // ─── Media Controls (Noctalia MPRIS) ───
-    XF86AudioPlay                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
-    XF86AudioNext                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }
-    XF86AudioPrev                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
+    // ─── Media Controls (DMS MPRIS) ───
+    XF86AudioPlay                       allow-when-locked=true { spawn-sh "dms ipc call mpris playPause"; }
+    XF86AudioNext                       allow-when-locked=true { spawn-sh "dms ipc call mpris next"; }
+    XF86AudioPrev                       allow-when-locked=true { spawn-sh "dms ipc call mpris previous"; }
 
     // ─── Universal Copy/Paste/Cut (context-aware via niri msg + wtype) ───
     // Terminals: Ctrl+Shift+{C,V}; everything else: Ctrl+{C,V,X}. Cut no-op in terminals.
@@ -33,15 +33,15 @@ binds {
     MOD+V                               hotkey-overlay-title="Universal paste" { spawn-sh "~/.config/niri/scripts/universal-clipboard.sh paste"; }
     MOD+X                               hotkey-overlay-title="Universal cut"   { spawn-sh "~/.config/niri/scripts/universal-clipboard.sh cut"; }
 
-    // ─── Noctalia panels & menus ───
-    MOD+SHIFT+L                         hotkey-overlay-title="Lock screen (Noctalia)"            { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    MOD+D                               hotkey-overlay-title="Notifications history"             { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
-    MOD+N                               hotkey-overlay-title="Control center"                    { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-    MOD+SHIFT+W                         hotkey-overlay-title="Wallpaper selector"                { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
-    MOD+PERIOD                          hotkey-overlay-title="Emoji picker"                      { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
-    MOD+CTRL+V                          hotkey-overlay-title="Clipboard history"                 { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
-    MOD+SHIFT+B                         hotkey-overlay-title="Toggle Noctalia bar"               { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
-    MOD+ESCAPE                          hotkey-overlay-title="Session menu (logout/reboot)"      { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    // ─── DMS panels & menus ───
+    MOD+SHIFT+L                         hotkey-overlay-title="Lock screen (DMS)"                 { spawn-sh "dms ipc call lock lock"; }
+    MOD+D                               hotkey-overlay-title="Notifications history"             { spawn-sh "dms ipc call notifications toggle"; }
+    MOD+N                               hotkey-overlay-title="Control center"                    { spawn-sh "dms ipc call control-center toggle"; }
+    MOD+SHIFT+W                         hotkey-overlay-title="Wallpaper selector"                { spawn-sh "dms ipc call dankdash wallpaper"; }
+    MOD+PERIOD                          hotkey-overlay-title="Emoji picker"                      { spawn-sh "dms ipc call spotlight openQuery emoji:"; }
+    MOD+CTRL+V                          hotkey-overlay-title="Clipboard history"                 { spawn-sh "dms ipc call clipboard toggle"; }
+    MOD+SHIFT+B                         hotkey-overlay-title="Toggle DMS bar"                    { spawn-sh "dms ipc call bar toggle"; }
+    MOD+ESCAPE                          hotkey-overlay-title="Session menu (logout/reboot)"      { spawn-sh "dms ipc call powermenu toggle"; }
 
     // ─── Window Close (Omarchy: MOD+W) ───
     MOD+W                               hotkey-overlay-title="Close current window" { close-window; }

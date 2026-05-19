@@ -9,6 +9,6 @@
     }
 
     layer-rule {
-        match namespace="^noctalia-wallpaper*"
+        match namespace="^dms:wallpaper"
         place-within-backdrop true
     }

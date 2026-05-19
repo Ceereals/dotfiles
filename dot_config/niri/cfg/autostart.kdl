@@ -2,11 +2,11 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "qs -c noctalia-shell"
+    spawn-at-startup "dms" "run"
 
     // Idle daemon (lock + DPMS scheduling). Reads ~/.config/hypr/hypridle.conf
     spawn-at-startup "hypridle"
 
-    // Clipboard history (text + images) — fed into Noctalia clipboard launcher
+    // Clipboard history (text + images) — fed into DMS clipboard
     spawn-sh-at-startup "wl-paste --type text  --watch cliphist store"
     spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
