@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Toggle Hyprland general:layout between dwindle and scrolling.
-# Sends a Noctalia toast for visual feedback.
+# Sends a notification (shown by DMS) for visual feedback.
 set -euo pipefail
 
 cur=$(hyprctl getoption general:layout -j | jq -r .str)
@@ -9,7 +9,4 @@ target="scrolling"
 
 hyprctl keyword general:layout "$target" >/dev/null
 
-qs -c noctalia-shell ipc call toast send "$(jq -nc \
-  --arg t "Layout" \
-  --arg m "Now using: $target" \
-  '{title: $t, message: $m}')" 2>/dev/null || true
+notify-send "Layout" "Now using: $target" 2>/dev/null || true
