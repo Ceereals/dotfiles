@@ -1,21 +1,16 @@
 # Configuration file for timewall
 
-# Geographical location for sun-position based wallpapers (Prato, Tuscany).
+# Geographical location for sun-position based wallpapers (Empoli, Tuscany).
 # Unused by "time" scheduled HEICs (e.g. the-cliffs), but needed for "solar" ones.
 [location]
-lat = 43.8777
-lon = 11.1023
+lat = 43.7177
+lon = 10.9461
 
-# Custom setter: awww (Wayland wallpaper daemon) for smooth macOS-style crossfade.
-# %f is replaced by timewall with the current frame image path.
+# Custom setter: wrapper script that paints the frame via awww (smooth crossfade)
+# and then regenerates the DMS matugen theme from the same frame, so the Material You
+# colors follow the wallpaper through the day. %f = current frame image path.
 [setter]
-command = [
-    'awww', 'img', '%f',
-    '--transition-type', 'fade',
-    '--transition-duration', '5',
-    '--transition-fps', '60',
-    '--transition-step', '10',
-]
+command = ['/home/ceereals/.local/bin/timewall-matugen.sh', '%f']
 overlap = 0
 quiet = false
 

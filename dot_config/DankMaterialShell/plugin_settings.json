@@ -6,5 +6,8 @@
   "dankKDEConnect": {
     "enabled": true,
     "selectedDeviceId": "9ec0a266ef9f4f50b6720f399e3014a2"
+  },
+  "dankLauncherKeys": {
+    "enabled": true
   }
 }
