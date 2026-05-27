@@ -1,0 +1,24 @@
+# Configuration file for timewall
+
+# Geographical location for sun-position based wallpapers (Prato, Tuscany).
+# Unused by "time" scheduled HEICs (e.g. the-cliffs), but needed for "solar" ones.
+[location]
+lat = 43.8777
+lon = 11.1023
+
+# Custom setter: awww (Wayland wallpaper daemon) for smooth macOS-style crossfade.
+# %f is replaced by timewall with the current frame image path.
+[setter]
+command = [
+    'awww', 'img', '%f',
+    '--transition-type', 'fade',
+    '--transition-duration', '5',
+    '--transition-fps', '60',
+    '--transition-step', '10',
+]
+overlap = 0
+quiet = false
+
+# How often the daemon re-evaluates which frame to show (daemon mode).
+[daemon]
+update_interval_seconds = 300

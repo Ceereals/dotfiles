@@ -1,0 +1,14 @@
+[Unit]
+Description=Dynamic wallpapers daemon
+PartOf=graphical-session.target
+After=graphical-session.target awww-daemon.service
+Wants=awww-daemon.service
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/timewall set %h/Pictures/wallpapers/dynamic/the-cliffs.heic --daemon
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target
