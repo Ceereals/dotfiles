@@ -613,7 +613,14 @@
         "showOnOverview": false,
         "syncPositionAcrossScreens": true
       },
-      "positions": {}
+      "positions": {
+        "_synced": {
+          "width": 100,
+          "height": 160,
+          "x": 0.48046875,
+          "y": 0.4444444444444444
+        }
+      }
     }
   ],
   "desktopWidgetGroups": [],
