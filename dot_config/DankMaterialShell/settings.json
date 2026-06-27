@@ -212,7 +212,9 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "spotlightSectionViewModes": {},
-  "appDrawerSectionViewModes": {},
+  "appDrawerSectionViewModes": {
+    "apps": "list"
+  },
   "niriOverviewOverlayEnabled": true,
   "dankLauncherV2Size": "compact",
   "dankLauncherV2BorderEnabled": false,
@@ -435,6 +437,10 @@
       "leftWidgets": [
         {
           "id": "workspaceSwitcher",
+          "enabled": true
+        },
+        {
+          "id": "launcherButton",
           "enabled": true
         }
       ],
