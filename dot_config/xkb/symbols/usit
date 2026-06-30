@@ -1,0 +1,19 @@
+// Custom US layout: Italian grave accents on AltGr (Right Alt = level 3).
+// All standard US keys unchanged; only the 3rd/4th level of vowels + ' added.
+//   AltGr+a/e/i/o/u   -> à è ì ò ù
+//   AltGr+'           -> é
+//   AltGr+Shift+...   -> À È Ì Ò Ù É
+default partial alphanumeric_keys
+xkb_symbols "italian" {
+    include "us(basic)"
+    name[Group1] = "English (US, accenti IT su AltGr)";
+
+    key <AC01> { [ a, A, agrave, Agrave ] };  // a -> à
+    key <AD03> { [ e, E, egrave, Egrave ] };  // e -> è
+    key <AD08> { [ i, I, igrave, Igrave ] };  // i -> ì
+    key <AD09> { [ o, O, ograve, Ograve ] };  // o -> ò
+    key <AD07> { [ u, U, ugrave, Ugrave ] };  // u -> ù
+    key <AC11> { [ apostrophe, quotedbl, eacute, Eacute ] }; // ' -> é
+
+    include "level3(ralt_switch)"   // Right Alt = level 3 selector
+};
