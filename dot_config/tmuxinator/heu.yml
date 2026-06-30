@@ -14,5 +14,4 @@ windows:
   - lazydocker: cd packages/denv && lazydocker
   - lazygit: lazygit
   - opencode: opencode
-  - claude: claude
   - terminal:
