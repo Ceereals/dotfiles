@@ -1,0 +1,6 @@
+# Files versioned in the repo but NEVER applied to $HOME.
+# system/ holds reference copies of files living outside $HOME (e.g. /etc);
+# they are restored by hand, see system/README.md.
+system
+system/**
+README.md

@@ -1,3 +1,11 @@
+# Autostart tmux: every interactive shell gets its own fresh session. Bare `tmux`
+# always creates a new (auto-numbered) session rather than attaching to an existing
+# one, so each terminal window is independent. Skip when already inside tmux ($TMUX
+# set) to avoid nesting. `exec` replaces fish so no orphan parent shell lingers.
+if status is-interactive; and not set -q TMUX; and type -q tmux
+    exec tmux
+end
+
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 zoxide init fish | source
 starship init fish | source

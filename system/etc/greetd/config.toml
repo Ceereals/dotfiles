@@ -1,0 +1,27 @@
+# /etc/greetd/config.toml — tuigreet + autologin (LUKS passphrase = unico login)
+#
+# Flusso: plymouth chiede la passphrase LUKS in initramfs (hook sd-encrypt),
+# poi greetd esegue UNA volta initial_session (autologin in Hyprland via uwsm).
+# Il greeter tuigreet appare solo dopo un logout esplicito o se la sessione
+# iniziale termina: da lì si può scegliere anche Plasma.
+#
+# Ripristino d'emergenza: Ctrl+Alt+F3 → login testuale →
+#   sudo cp /etc/greetd/config.toml.backup-<data> /etc/greetd/config.toml
+#   sudo systemctl restart greetd
+
+[terminal]
+vt = 1
+
+# Eseguita SOLO al primo avvio di greetd dopo il boot: autologin senza password.
+# Il comando è l'Exec esatto di /usr/share/wayland-sessions/hyprland-uwsm.desktop.
+[initial_session]
+command = "uwsm start -e -D Hyprland hyprland.desktop"
+user = "ceereals"
+
+# Greeter di fallback (dopo logout): tuigreet, TUI senza compositor.
+# --remember / --remember-user-session: ricorda ultimo utente e sessione.
+# --sessions: menu con le sessioni wayland (Hyprland uwsm, Plasma, ...).
+# --cmd: fallback se nessuna sessione viene scelta dal menu.
+[default_session]
+command = "tuigreet --time --remember --remember-user-session --sessions /usr/share/wayland-sessions --cmd 'uwsm start -e -D Hyprland hyprland.desktop'"
+user = "greeter"
