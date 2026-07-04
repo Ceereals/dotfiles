@@ -1,3 +1,6 @@
+# ble.sh: autosuggestions + syntax highlighting stile fish (source in cima, attach in fondo)
+[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach
+
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
@@ -6,6 +9,11 @@
 source ~/.local/share/omarchy/default/bash/rc
 
 # Add your own exports, aliases, and functions here.
-#
+alias cat='bat'
+command -v direnv &>/dev/null && eval "$(direnv hook bash)"
+
 # Make an alias for invoking commands you use constantly
 # alias p='python'
+
+# ble.sh: attach alla fine (dopo che Omarchy ha caricato tutto)
+[[ ! ${BLE_VERSION-} ]] || ble-attach
