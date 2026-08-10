@@ -51,10 +51,14 @@ packages:
       - unzip
       - zoxide
 
-    # Not in any Debian archive: fetched from the upstream release tarball into
-    # ~/.local/bin. Pinned, so run_onchange only re-runs when the version moves.
-    binaries:
-      lazydocker: "0.25.2"
+    # Not in any Debian archive: fetched from the upstream GitHub release into
+    # ~/.local/bin. Deliberately unpinned — the install script resolves the
+    # latest tag on each run, so these track upstream the way apt packages do.
+    # VERSION and ARCH in `asset` are substituted by that script.
+    github:
+      - repo: jesseduffield/lazydocker
+        bin: lazydocker
+        asset: lazydocker_VERSION_Linux_ARCH.tar.gz
 
   darwin:
     brews:

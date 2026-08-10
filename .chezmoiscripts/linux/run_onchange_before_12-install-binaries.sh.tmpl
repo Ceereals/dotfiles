@@ -1,5 +1,8 @@
 #!/bin/bash
-# {{ .packages.linux.binaries | toJson | sha256sum }}
+{{- /* The date makes this script re-run once a day even when the list below is
+       unchanged: that daily run is what upgrades these tools, since they track
+       the latest upstream tag instead of a pin. */}}
+# {{ .packages.linux.github | toJson | sha256sum }} {{ now | date "2006-01-02" }}
 set -euo pipefail
 
 # Arch has these in its repos, so this is only the fallback for distros that
@@ -28,14 +31,44 @@ mkdir -p "$DEST"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-LAZYDOCKER="{{ .packages.linux.binaries.lazydocker }}"
-if [ -x "$DEST/lazydocker" ] \
-    && "$DEST/lazydocker" --version 2>/dev/null | grep -qF "$LAZYDOCKER"; then
-    exit 0
-fi
+install_latest() {
+    local repo="$1" bin="$2" asset_tpl="$3"
+    local version asset url
 
-echo "==> lazydocker $LAZYDOCKER -> $DEST"
-URL="https://github.com/jesseduffield/lazydocker/releases/download/v${LAZYDOCKER}/lazydocker_${LAZYDOCKER}_Linux_${ARCH}.tar.gz"
-curl -fsSL "$URL" -o "$TMP/lazydocker.tar.gz"
-tar -xzf "$TMP/lazydocker.tar.gz" -C "$TMP" lazydocker
-install -m 0755 "$TMP/lazydocker" "$DEST/lazydocker"
+    # A network hiccup or a spent API quota must not fail the whole apply: the
+    # tool either stays at the version already installed, or stays absent.
+    version="$(curl -fsSL "https://api.github.com/repos/$repo/releases/latest" 2>/dev/null \
+        | sed -n 's/.*"tag_name": *"v\?\([^"]*\)".*/\1/p' | head -1)" || true
+    if [ -z "$version" ]; then
+        echo "!! $bin: ultima release di $repo non leggibile, salto." >&2
+        return 0
+    fi
+
+    if [ -x "$DEST/$bin" ] && "$DEST/$bin" --version 2>/dev/null | grep -qF "$version"; then
+        return 0
+    fi
+
+    asset="${asset_tpl//VERSION/$version}"
+    asset="${asset//ARCH/$ARCH}"
+    url="https://github.com/$repo/releases/download/v${version}/${asset}"
+
+    echo "==> $bin $version -> $DEST"
+    if ! curl -fsSL "$url" -o "$TMP/$asset"; then
+        echo "!! $bin: download di $asset fallito, salto." >&2
+        return 0
+    fi
+
+    case "$asset" in
+        *.tar.gz|*.tgz)
+            tar -xzf "$TMP/$asset" -C "$TMP" "$bin"
+            install -m 0755 "$TMP/$bin" "$DEST/$bin"
+            ;;
+        *)
+            install -m 0755 "$TMP/$asset" "$DEST/$bin"
+            ;;
+    esac
+}
+
+{{ range .packages.linux.github -}}
+install_latest {{ .repo | quote }} {{ .bin | quote }} {{ .asset | quote }}
+{{ end }}
