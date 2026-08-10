@@ -23,7 +23,7 @@ pause() { printf '\n[Invio per chiudere] '; read -r _; }
 
 case "$choice" in
     "Aggiorna sistema")     sudo pacman -Syu; pause ;;
-    "Snapshot config DMS")  fish -ic dms-snapshot; pause ;;
+    "Snapshot config DMS")  "$HOME/.local/bin/dms-snapshot"; pause ;;
     # Detach + small delay so this window is gone before the shot is taken.
     "Screenshot area")      hyprctl dispatch exec 'sh -c "sleep 0.3; grimblast copy area"' ;;
     "Screenshot finestra")  hyprctl dispatch exec 'sh -c "sleep 0.3; grimblast copy active"' ;;

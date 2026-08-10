@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Snapshot live DMS config into the chezmoi repo.
+# (Port bash della vecchia funzione fish dms-snapshot.)
+#
+# DMS rewrites settings.json at runtime, so the LIVE files are the source of
+# truth: always flow live -> chezmoi source (re-add), never `chezmoi apply`.
+set -uo pipefail
+
+dms="$HOME/.config/DankMaterialShell"
+targets=(
+    "$dms/settings.json"
+    "$dms/plugin_settings.json"
+    "$dms/firefox.css"
+    "$dms/themes"
+    "$HOME/.config/hypr/hyprland.conf"
+)
+
+# Plugin code is a git clone managed by DMS; only the .meta pointers are versioned.
+shopt -s nullglob
+targets+=("$dms"/plugins/*.meta)
+shopt -u nullglob
+
+# Note: brand-new unmanaged files (e.g. a theme dir created after the last
+# snapshot) don't show in `chezmoi status`; `chezmoi add` below still picks
+# them up because $targets includes the whole themes/ directory.
+if ! chezmoi status "${targets[@]}" | grep -q .; then
+    echo "Nessuna differenza: niente da snapshottare."
+    exit 0
+fi
+
+echo "Differenze source → live (il live sovrascriverà il source):"
+chezmoi diff "${targets[@]}"
+
+read -r -p "Eseguo snapshot (commit+push automatici via chezmoi)? [y/N] " reply
+case "$reply" in
+    [yY]*) ;;
+    *) echo "Annullato."; exit 1 ;;
+esac
+
+# git.autoCommit/autoPush are enabled in chezmoi.toml: add commits and pushes
+# by itself. Commits are SSH-signed, so the Bitwarden agent must be unlocked.
+chezmoi add "${targets[@]}"
