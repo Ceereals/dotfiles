@@ -8,7 +8,6 @@ packages:
     - fd
     - fzf
     - git
-    - git-delta
     - jq
     - lazygit
     - mise
@@ -23,8 +22,7 @@ packages:
       - lazydocker
       - tmuxinator
       - ghostty
-    aur:
-      - blesh-git
+    aur: []
 
   darwin:
     brews:

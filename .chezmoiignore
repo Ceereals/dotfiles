@@ -6,8 +6,6 @@ docs/**
 
 {{ if .isDarwin }}
 .chezmoiscripts/linux/**
-.bashrc
-.profile
 .config/hypr
 .config/hypr/**
 .config/niri
