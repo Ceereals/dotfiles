@@ -1,0 +1,16 @@
+{{ if .isDarwin -}}
+eval "$({{ .brewPrefix }}/bin/brew shellenv)"
+export PATH="{{ .brewPrefix }}/opt/coreutils/libexec/gnubin:{{ .brewPrefix }}/opt/gnu-sed/libexec/gnubin:$PATH"
+export BROWSER=open
+{{- else -}}
+export BROWSER=firefox
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export GTK_THEME=adw-gtk3-dark
+{{- end }}
+
+export TERM=ghostty
+export EDITOR=nvim
+export PATH="$HOME/.local/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

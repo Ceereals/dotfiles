@@ -9,7 +9,13 @@ bind q source-file ~/.config/tmux/tmux.conf \; display "Configuration reloaded"
 # Vi mode for copy
 setw -g mode-keys vi
 bind -T copy-mode-vi v send -X begin-selection
-bind -T copy-mode-vi y send -X copy-selection-and-cancel
+{{ if .isDarwin -}}
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel "pbcopy"
+bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-and-cancel "pbcopy"
+{{- else -}}
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"
+bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-and-cancel "wl-copy"
+{{- end }}
 
 # Pane Controls
 bind h split-window -v -c "#{pane_current_path}"
@@ -57,6 +63,9 @@ bind -n M-Up switch-client -p
 bind -n M-Down switch-client -n
 
 # General
+{{ if .isDarwin -}}
+set -g default-command "{{ .brewPrefix }}/bin/bash"
+{{- end }}
 set -g default-terminal "tmux-256color"
 set -ag terminal-overrides ",*:RGB"
 set -g mouse on

@@ -58,6 +58,8 @@ x-scheme-handler/bruno=bruno.desktop
 x-scheme-handler/bitwarden=bitwarden.desktop
 message/rfc822=userapp-Thunderbird-023TP3.desktop
 x-scheme-handler/mid=userapp-Thunderbird-023TP3.desktop
+application/epub+zip=calibre-ebook-viewer.desktop
+x-scheme-handler/slack=slack.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -72,3 +74,4 @@ application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-023TP3.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-023TP3.desktop;
+application/epub+zip=calibre-ebook-viewer.desktop;

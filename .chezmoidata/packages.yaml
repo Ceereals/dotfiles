@@ -1,0 +1,48 @@
+packages:
+  common:
+    - bat
+    - btop
+    - direnv
+    - eza
+    - fastfetch
+    - fd
+    - fzf
+    - git
+    - git-delta
+    - jq
+    - lazygit
+    - mise
+    - neovim
+    - ripgrep
+    - starship
+    - tmux
+    - zoxide
+
+  linux:
+    pacman:
+      - lazydocker
+      - tmuxinator
+      - ghostty
+    aur:
+      - blesh-git
+
+  darwin:
+    brews:
+      - bash
+      - bash-completion@2
+      - coreutils
+      - gnu-sed
+      - lazydocker
+      - tmuxinator
+      - pinentry-mac
+    casks:
+      - ghostty
+      - font-jetbrains-mono-nerd-font
+      - aerospace
+      - karabiner-elements
+      - raycast
+      - firefox
+      - visual-studio-code
+      - docker-desktop
+      - obsidian
+      - localsend

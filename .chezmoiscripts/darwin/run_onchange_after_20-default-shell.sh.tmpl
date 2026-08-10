@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+BREW_BASH="{{ .brewPrefix }}/bin/bash"
+
+[ -x "$BREW_BASH" ] || exit 0
+
+if ! grep -qxF "$BREW_BASH" /etc/shells; then
+    echo "==> Registro $BREW_BASH in /etc/shells"
+    echo "$BREW_BASH" | sudo tee -a /etc/shells >/dev/null
+fi
+
+if [ "$SHELL" != "$BREW_BASH" ]; then
+    echo "==> Imposto $BREW_BASH come shell di default"
+    chsh -s "$BREW_BASH" || true
+fi

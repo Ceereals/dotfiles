@@ -1,0 +1,7 @@
+eval "$({{ .brewPrefix }}/bin/brew shellenv)"
+
+if [ -x "{{ .brewPrefix }}/bin/bash" ] && [ -z "${BASH_VERSION-}" ] && [ -t 1 ]; then
+    exec "{{ .brewPrefix }}/bin/bash" -l
+fi
+
+[ -f "$HOME/.profile" ] && . "$HOME/.profile"

@@ -1,0 +1,38 @@
+{{- $isLinux  := eq .chezmoi.os "linux" -}}
+{{- $isDarwin := eq .chezmoi.os "darwin" -}}
+{{- $osID     := .chezmoi.os -}}
+{{- if and $isLinux (hasKey .chezmoi.osRelease "id") -}}
+{{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+{{- $hasOmarchy := and $isLinux (stat (joinPath .chezmoi.homeDir ".local/share/omarchy") | not | not) -}}
+{{- $isGUI := $isDarwin -}}
+{{- if $isLinux -}}
+{{-   $isGUI = or $hasOmarchy (ne (env "XDG_SESSION_TYPE") "") (ne (env "WAYLAND_DISPLAY") "") -}}
+{{- end -}}
+{{- $brewPrefix := "/opt/homebrew" -}}
+{{- if and $isDarwin (eq .chezmoi.arch "amd64") -}}
+{{-   $brewPrefix = "/usr/local" -}}
+{{- end -}}
+encryption = ""
+
+[data]
+    osid = {{ $osID | quote }}
+    isLinux = {{ $isLinux }}
+    isDarwin = {{ $isDarwin }}
+    isGUI = {{ $isGUI }}
+    hasOmarchy = {{ $hasOmarchy }}
+    brewPrefix = {{ $brewPrefix | quote }}
+
+[data.font]
+    family = "JetBrainsMono Nerd Font"
+    size = {{ if $isDarwin }}13{{ else }}9{{ end }}
+
+[data.terminal]
+    theme = "tokyonight"
+
+[git]
+    autoCommit = true
+    autoPush = true
+
+[diff]
+    exclude = ["scripts"]

@@ -1,0 +1,36 @@
+{{ if .isLinux -}}
+[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach
+{{- end }}
+
+[[ $- != *i* ]] && return
+
+{{ if .isDarwin -}}
+[ -r "{{ .brewPrefix }}/etc/profile.d/bash_completion.sh" ] && . "{{ .brewPrefix }}/etc/profile.d/bash_completion.sh"
+{{- end }}
+{{ if .hasOmarchy -}}
+source ~/.local/share/omarchy/default/bash/rc
+{{- end }}
+
+alias cat='bat'
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -l --icons --group-directories-first'
+alias la='eza -la --icons --group-directories-first'
+alias lg='lazygit'
+alias vim='nvim'
+{{ if .isDarwin -}}
+alias o='open'
+{{- else -}}
+alias o='xdg-open'
+{{- end }}
+
+command -v direnv &>/dev/null && eval "$(direnv hook bash)"
+command -v mise &>/dev/null && eval "$(mise activate bash)"
+command -v zoxide &>/dev/null && eval "$(zoxide init --cmd cd bash)"
+command -v starship &>/dev/null && eval "$(starship init bash)"
+command -v fzf &>/dev/null && eval "$(fzf --bash)"
+
+{{ if .isLinux -}}
+[ -r "$HOME/.config/remnic/env" ] && set -a && . "$HOME/.config/remnic/env" && set +a
+
+[[ ! ${BLE_VERSION-} ]] || ble-attach
+{{- end }}

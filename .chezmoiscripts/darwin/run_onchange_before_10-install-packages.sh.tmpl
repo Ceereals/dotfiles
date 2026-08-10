@@ -1,0 +1,29 @@
+#!/bin/bash
+# {{ list .packages.common .packages.darwin | toJson | sha256sum }}
+set -euo pipefail
+
+BREW_PREFIX="{{ .brewPrefix }}"
+
+if ! command -v brew >/dev/null 2>&1; then
+    if [ -x "$BREW_PREFIX/bin/brew" ]; then
+        eval "$("$BREW_PREFIX/bin/brew" shellenv)"
+    else
+        echo "==> Installo Homebrew"
+        NONINTERACTIVE=1 /bin/bash -c \
+            "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        eval "$("$BREW_PREFIX/bin/brew" shellenv)"
+    fi
+fi
+
+echo "==> Installo formulae"
+brew install --quiet \
+{{ range (concat .packages.common .packages.darwin.brews) }}    {{ . | quote }} \
+{{ end }}    || true
+
+echo "==> Installo cask"
+brew install --cask --quiet \
+{{ range .packages.darwin.casks }}    {{ . | quote }} \
+{{ end }}    || true
+
+echo "==> Cleanup"
+brew cleanup --quiet || true

@@ -1,6 +1,70 @@
-# Files versioned in the repo but NEVER applied to $HOME.
-# system/ holds reference copies of files living outside $HOME (e.g. /etc);
-# they are restored by hand, see system/README.md.
 system
 system/**
 README.md
+docs
+docs/**
+
+{{ if .isDarwin }}
+.chezmoiscripts/linux/**
+.bashrc
+.profile
+.config/hypr
+.config/hypr/**
+.config/niri
+.config/niri/**
+.config/noctalia
+.config/noctalia/**
+.config/DankMaterialShell
+.config/DankMaterialShell/**
+.config/systemd
+.config/systemd/**
+.config/xkb
+.config/xkb/**
+.config/timewall
+.config/timewall/**
+.config/mimeapps.list
+.config/user-dirs.dirs
+.config/btop/themes
+.config/btop/themes/**
+.config/ghostty/themes
+.config/ghostty/themes/**
+.config/nvim/lua/plugins/omarchy-theme-hotreload.lua
+.config/nvim/lua/plugins/symlink_theme.lua
+.local/bin/dank-menu.sh
+.local/bin/dms-snapshot
+.local/bin/timewall-matugen.sh
+{{ end }}
+
+{{ if .isLinux }}
+.chezmoiscripts/darwin/**
+.zshrc
+.zprofile
+.bash_profile
+.Brewfile
+.config/aerospace
+.config/aerospace/**
+.config/karabiner
+.config/karabiner/**
+Library
+Library/**
+{{ end }}
+
+{{ if not .hasOmarchy }}
+.config/btop/themes/current.theme
+.config/nvim/lua/plugins/omarchy-theme-hotreload.lua
+.config/nvim/lua/plugins/symlink_theme.lua
+{{ end }}
+
+{{ if not .isGUI }}
+.config/hypr
+.config/hypr/**
+.config/niri
+.config/niri/**
+.config/noctalia
+.config/noctalia/**
+.config/DankMaterialShell
+.config/DankMaterialShell/**
+.config/ghostty
+.config/ghostty/**
+.config/mimeapps.list
+{{ end }}

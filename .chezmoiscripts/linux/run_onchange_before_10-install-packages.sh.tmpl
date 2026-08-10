@@ -1,0 +1,36 @@
+#!/bin/bash
+# {{ list .packages.common .packages.linux | toJson | sha256sum }}
+set -euo pipefail
+
+if ! command -v pacman >/dev/null 2>&1; then
+    echo "!! pacman non disponibile, salto l'installazione." >&2
+    exit 0
+fi
+
+PKGS=(
+{{ range (concat .packages.common .packages.linux.pacman) }}    {{ . | quote }}
+{{ end }})
+
+MISSING=()
+for p in "${PKGS[@]}"; do
+    pacman -Qi "$p" >/dev/null 2>&1 || MISSING+=("$p")
+done
+
+if [ ${#MISSING[@]} -gt 0 ]; then
+    echo "==> pacman: installo ${MISSING[*]}"
+    sudo pacman -S --needed --noconfirm "${MISSING[@]}" || true
+fi
+
+if command -v yay >/dev/null 2>&1; then
+    AUR=(
+{{ range .packages.linux.aur }}        {{ . | quote }}
+{{ end }}    )
+    AUR_MISSING=()
+    for p in "${AUR[@]}"; do
+        pacman -Qi "$p" >/dev/null 2>&1 || AUR_MISSING+=("$p")
+    done
+    if [ ${#AUR_MISSING[@]} -gt 0 ]; then
+        echo "==> yay: installo ${AUR_MISSING[*]}"
+        yay -S --needed --noconfirm "${AUR_MISSING[@]}" || true
+    fi
+fi
