@@ -17,3 +17,13 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+{{ if .isLinux }}
+{{- /* SSH and tty logins start bash as a login shell, which reads this file and
+       never ~/.bashrc — and Linux has no ~/.bash_profile here. Source it last,
+       once PATH already includes ~/.local/bin, or the command -v guards in
+       .bashrc miss the tools installed there. .bashrc returns early when the
+       shell is not interactive, so non-interactive logins are unaffected. */}}
+if [ -n "${BASH_VERSION-}" ] && [ -r "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+fi
+{{- end }}
