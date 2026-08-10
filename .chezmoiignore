@@ -14,8 +14,6 @@ docs/**
 .config/whispy/**
 .config/quickshell
 .config/quickshell/**
-.config/systemd
-.config/systemd/**
 .config/xkb
 .config/xkb/**
 .config/timewall
