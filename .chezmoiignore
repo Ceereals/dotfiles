@@ -8,6 +8,12 @@ docs/**
 .chezmoiscripts/linux/**
 .config/hypr
 .config/hypr/**
+.config/waybar
+.config/waybar/**
+.config/whispy
+.config/whispy/**
+.config/quickshell
+.config/quickshell/**
 .config/systemd
 .config/systemd/**
 .config/xkb
@@ -46,6 +52,12 @@ Library/**
 {{ if not .isGUI }}
 .config/hypr
 .config/hypr/**
+.config/waybar
+.config/waybar/**
+.config/whispy
+.config/whispy/**
+.config/quickshell
+.config/quickshell/**
 .config/ghostty
 .config/ghostty/**
 .config/mimeapps.list
