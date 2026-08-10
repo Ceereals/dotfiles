@@ -20,7 +20,6 @@ packages:
   linux:
     pacman:
       - lazydocker
-      - tmuxinator
       - ghostty
     aur: []
 
@@ -31,7 +30,6 @@ packages:
       - coreutils
       - gnu-sed
       - lazydocker
-      - tmuxinator
       - pinentry-mac
     casks:
       - ghostty
