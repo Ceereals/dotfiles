@@ -8,12 +8,6 @@ docs/**
 .chezmoiscripts/linux/**
 .config/hypr
 .config/hypr/**
-.config/niri
-.config/niri/**
-.config/noctalia
-.config/noctalia/**
-.config/DankMaterialShell
-.config/DankMaterialShell/**
 .config/systemd
 .config/systemd/**
 .config/xkb
@@ -24,12 +18,8 @@ docs/**
 .config/user-dirs.dirs
 .config/btop/themes
 .config/btop/themes/**
-.config/ghostty/themes
-.config/ghostty/themes/**
 .config/nvim/lua/plugins/omarchy-theme-hotreload.lua
 .config/nvim/lua/plugins/symlink_theme.lua
-.local/bin/dank-menu.sh
-.local/bin/dms-snapshot
 .local/bin/timewall-matugen.sh
 {{ end }}
 
@@ -56,12 +46,6 @@ Library/**
 {{ if not .isGUI }}
 .config/hypr
 .config/hypr/**
-.config/niri
-.config/niri/**
-.config/noctalia
-.config/noctalia/**
-.config/DankMaterialShell
-.config/DankMaterialShell/**
 .config/ghostty
 .config/ghostty/**
 .config/mimeapps.list
