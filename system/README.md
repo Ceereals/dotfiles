@@ -1,14 +1,13 @@
-# system/ — file di sistema versionati (fuori da $HOME)
+# system/
 
-chezmoi applica solo dentro `$HOME`: questa directory è un archivio consultabile
-(esclusa dall'apply via `.chezmoiignore`). Il ripristino è manuale:
+Reference copies of files outside `$HOME`. Excluded from `chezmoi apply`; restore by hand:
 
 ```sh
 sudo cp ~/.local/share/chezmoi/system/etc/greetd/config.toml /etc/greetd/config.toml
-sudo systemctl restart greetd   # MAI dalla sessione grafica attiva: la uccide
+sudo systemctl restart greetd   # never from the active graphical session — it kills it
 ```
 
-## Contenuto
+## Contents
 
-- `etc/greetd/config.toml` — tuigreet + autologin post-LUKS (la passphrase del
-  disco è l'unico login; il greeter appare solo dopo un logout esplicito).
+- `etc/greetd/config.toml` — tuigreet with post-LUKS autologin; the greeter only
+  appears after an explicit logout.
