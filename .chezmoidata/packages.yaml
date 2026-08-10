@@ -23,6 +23,32 @@ packages:
       - ghostty
     aur: []
 
+    # Debian servers: explicit, self-contained list — NOT `common` + overrides.
+    # Names are Debian's (fd-find, not fd) and the tools missing from apt
+    # (starship, mise, lazygit) are deliberately absent: servers stay minimal.
+    # The install script skips anything this release doesn't ship, so adding a
+    # package that only exists in a newer Debian is safe.
+    apt:
+      - bat
+      - btop
+      - ca-certificates
+      - curl
+      - direnv
+      - eza
+      - fastfetch
+      - fd-find
+      - fzf
+      - git
+      - htop
+      - jq
+      - less
+      - neovim
+      - ripgrep
+      - rsync
+      - tmux
+      - unzip
+      - zoxide
+
   darwin:
     brews:
       - bash

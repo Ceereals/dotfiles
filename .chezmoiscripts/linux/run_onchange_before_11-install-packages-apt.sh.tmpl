@@ -1,0 +1,69 @@
+#!/bin/bash
+# {{ .packages.linux.apt | toJson | sha256sum }}
+set -euo pipefail
+
+if ! command -v apt-get >/dev/null 2>&1; then
+    echo "!! apt-get non disponibile, salto l'installazione." >&2
+    exit 0
+fi
+
+SUDO=""
+if [ "$(id -u)" -ne 0 ]; then
+    if command -v sudo >/dev/null 2>&1; then
+        SUDO="sudo"
+    else
+        echo "!! non sono root e sudo manca, salto l'installazione." >&2
+        exit 0
+    fi
+fi
+
+export DEBIAN_FRONTEND=noninteractive
+
+PKGS=(
+{{ range .packages.linux.apt }}    {{ . | quote }}
+{{ end }})
+
+MISSING=()
+for p in "${PKGS[@]}"; do
+    dpkg-query -W -f='${Status}' "$p" 2>/dev/null | grep -q '^install ok installed$' || MISSING+=("$p")
+done
+
+if [ ${#MISSING[@]} -eq 0 ]; then
+    exit 0
+fi
+
+# Refresh the package lists only when they are stale (or absent, as in a fresh LXC).
+LISTS=/var/lib/apt/lists
+if [ -z "$(ls -A "$LISTS" 2>/dev/null | grep -v '^lock$\|^partial$' || true)" ] \
+    || [ -n "$(find "$LISTS" -maxdepth 1 -name '*_Packages*' -mtime +1 -print -quit 2>/dev/null)" ]; then
+    echo "==> apt: aggiorno gli indici"
+    $SUDO apt-get update -qq
+fi
+
+# A package absent from this Debian release is skipped, not fatal: the same list
+# is shared by every server and older releases ship fewer of these tools.
+WANTED=()
+for p in "${MISSING[@]}"; do
+    cand="$(apt-cache policy "$p" 2>/dev/null | awk '/Candidate:/ {print $2; exit}')"
+    if [ -n "$cand" ] && [ "$cand" != "(none)" ]; then
+        WANTED+=("$p")
+    else
+        echo "!! apt: '$p' non disponibile su questa release, salto." >&2
+    fi
+done
+
+if [ ${#WANTED[@]} -gt 0 ]; then
+    echo "==> apt: installo ${WANTED[*]}"
+    $SUDO apt-get install -y --no-install-recommends "${WANTED[@]}"
+fi
+
+# Debian renames two binaries to dodge name clashes; give them their usual names
+# so fzf, neovim and muscle memory all find them.
+mkdir -p "$HOME/.local/bin"
+for pair in "batcat:bat" "fdfind:fd"; do
+    src="${pair%%:*}"
+    dst="${pair##*:}"
+    if command -v "$src" >/dev/null 2>&1 && ! command -v "$dst" >/dev/null 2>&1; then
+        ln -sfn "$(command -v "$src")" "$HOME/.local/bin/$dst"
+    fi
+done

@@ -47,7 +47,7 @@ Library/**
 .config/nvim/lua/plugins/symlink_theme.lua
 {{ end }}
 
-{{ if not .isGUI }}
+{{ if .isServer }}
 .config/hypr
 .config/hypr/**
 .config/waybar
@@ -58,5 +58,17 @@ Library/**
 .config/quickshell/**
 .config/ghostty
 .config/ghostty/**
+.config/xkb
+.config/xkb/**
+.config/timewall
+.config/timewall/**
+.config/systemd
+.config/systemd/**
+.config/btop/themes
+.config/btop/themes/**
+.config/nvim/lua/plugins/omarchy-theme-hotreload.lua
+.config/nvim/lua/plugins/symlink_theme.lua
 .config/mimeapps.list
+.config/user-dirs.dirs
+.local/bin/timewall-matugen.sh
 {{ end }}

@@ -4,10 +4,22 @@
 {{- if and $isLinux (hasKey .chezmoi.osRelease "id") -}}
 {{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
+{{- $isDebian := and $isLinux (eq $osID "linux-debian") -}}
 {{- $hasOmarchy := and $isLinux (stat (joinPath .chezmoi.homeDir ".local/share/omarchy") | not | not) -}}
 {{- $isGUI := $isDarwin -}}
 {{- if $isLinux -}}
-{{-   $isGUI = or $hasOmarchy (ne (env "XDG_SESSION_TYPE") "") (ne (env "WAYLAND_DISPLAY") "") -}}
+{{- /* Only a real graphical session counts: over SSH systemd sets XDG_SESSION_TYPE=tty. */ -}}
+{{-   $session := env "XDG_SESSION_TYPE" -}}
+{{-   $isGUI = or $hasOmarchy (eq $session "wayland") (eq $session "x11") (ne (env "WAYLAND_DISPLAY") "") -}}
+{{- end -}}
+{{- /* Headless Linux box: servers get the minimal, apt-only profile.
+       The sniffed value is only a proposal — confirm it once at init. The answer
+       is stored in [data] below, so later inits reuse it and never ask again.
+       With no TTY the default wins, so unattended bootstraps never block;
+       preseed with: chezmoi init --promptBool "server headless=true" */ -}}
+{{- $isServer := and $isLinux (not $isGUI) -}}
+{{- if $isLinux -}}
+{{-   $isServer = promptBoolOnce . "isServer" "server headless" $isServer -}}
 {{- end -}}
 {{- $brewPrefix := "/opt/homebrew" -}}
 {{- if and $isDarwin (eq .chezmoi.arch "amd64") -}}
@@ -20,6 +32,8 @@ encryption = ""
     isLinux = {{ $isLinux }}
     isDarwin = {{ $isDarwin }}
     isGUI = {{ $isGUI }}
+    isDebian = {{ $isDebian }}
+    isServer = {{ $isServer }}
     hasOmarchy = {{ $hasOmarchy }}
     brewPrefix = {{ $brewPrefix | quote }}
 
@@ -31,8 +45,9 @@ encryption = ""
     theme = "tokyonight"
 
 [git]
-    autoCommit = true
-    autoPush = true
+    {{- /* Servers consume dotfiles, they don't author them: never commit/push from there. */}}
+    autoCommit = {{ not $isServer }}
+    autoPush = {{ not $isServer }}
 
 [diff]
     exclude = ["scripts"]

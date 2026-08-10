@@ -2,13 +2,16 @@
 eval "$({{ .brewPrefix }}/bin/brew shellenv)"
 export PATH="{{ .brewPrefix }}/opt/coreutils/libexec/gnubin:{{ .brewPrefix }}/opt/gnu-sed/libexec/gnubin:$PATH"
 export BROWSER=open
-{{- else -}}
+{{- else if not .isServer -}}
 export BROWSER=firefox
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK_THEME=adw-gtk3-dark
 {{- end }}
-
+{{ if not .isServer }}
+{{- /* Headless boxes inherit TERM from the SSH client; forcing ghostty would
+       break ncurses apps, since the server has no ghostty terminfo entry. */}}
 export TERM=ghostty
+{{- end }}
 export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
 

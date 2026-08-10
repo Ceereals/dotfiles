@@ -1,5 +1,5 @@
 {{ if .isLinux -}}
-[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach
+[[ $- == *i* && -r ~/.local/share/blesh/ble.sh ]] && source ~/.local/share/blesh/ble.sh --noattach
 
 {{ end -}}
 [[ $- != *i* ]] && return
@@ -10,13 +10,19 @@
 source ~/.local/share/omarchy/default/bash/rc
 {{- end }}
 
-alias cat='bat'
+command -v bat &>/dev/null && alias cat='bat'
 command -v direnv &>/dev/null && eval "$(direnv hook bash)"
 {{ if not .hasOmarchy }}
-alias ls='eza --icons --group-directories-first'
-alias ll='eza -l --icons --group-directories-first'
-alias la='eza -la --icons --group-directories-first'
-alias lg='lazygit'
+# Debian ships a subset of these tools, so every alias has to survive a missing binary.
+if command -v eza &>/dev/null; then
+    alias ls='eza --icons --group-directories-first'
+    alias ll='eza -l --icons --group-directories-first'
+    alias la='eza -la --icons --group-directories-first'
+else
+    alias ll='ls -l'
+    alias la='ls -la'
+fi
+command -v lazygit &>/dev/null && alias lg='lazygit'
 alias vim='nvim'
 {{ if .isDarwin }}alias o='open'{{ else }}alias o='xdg-open'{{ end }}
 
