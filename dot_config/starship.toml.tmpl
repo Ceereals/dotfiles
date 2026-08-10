@@ -1,0 +1,50 @@
+{{- /* Servers swap the whole prompt to yellow, so a remote session is obvious
+       from colour alone, before reading a single character. */ -}}
+{{- $accent := "cyan" -}}
+{{- if .isServer }}{{ $accent = "yellow" }}{{ end -}}
+add_newline = false
+command_timeout = 200
+format = "$username$hostname[$directory$git_branch$git_status]($style)$character"
+
+[character]
+error_symbol = "[✗](bold {{ $accent }})"
+success_symbol = "[❯](bold {{ $accent }})"
+
+# Both modules stay empty on the local machine — username shows over SSH or for
+# root, hostname only over SSH — so the same config reads correctly everywhere:
+# user@host appears exactly when the shell is remote, and root turns it red.
+[username]
+show_always = false
+format = "[$user]($style)[@](bold {{ $accent }})"
+style_user = "bold {{ $accent }}"
+style_root = "bold red"
+
+[hostname]
+ssh_only = true
+format = "[$hostname]($style) "
+style = "bold {{ $accent }}"
+
+[directory]
+truncation_length = 2
+truncation_symbol = "…/"
+repo_root_style = "bold {{ $accent }}"
+repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+format = "[$branch]($style) "
+style = "italic {{ $accent }}"
+
+[git_status]
+format     = '[$all_status]($style)'
+style      = "{{ $accent }}"
+ahead      = "⇡${count} "
+diverged   = "⇕⇡${ahead_count}⇣${behind_count} "
+behind     = "⇣${count} "
+conflicted = " "
+up_to_date = " "
+untracked  = "? "
+modified   = " "
+stashed    = ""
+staged     = ""
+renamed    = ""
+deleted    = ""
