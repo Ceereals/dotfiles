@@ -1,0 +1,41 @@
+#!/bin/bash
+# {{ .packages.linux.binaries | toJson | sha256sum }}
+set -euo pipefail
+
+# Arch has these in its repos, so this is only the fallback for distros that
+# don't package them at all — see the pacman list in packages.yaml.
+if command -v pacman >/dev/null 2>&1; then
+    exit 0
+fi
+
+if ! command -v curl >/dev/null 2>&1; then
+    echo "!! curl non disponibile, salto i binari upstream." >&2
+    exit 0
+fi
+
+case "$(uname -m)" in
+    x86_64)  ARCH="x86_64" ;;
+    aarch64) ARCH="arm64" ;;
+    *)
+        echo "!! architettura $(uname -m) non gestita, salto i binari upstream." >&2
+        exit 0
+        ;;
+esac
+
+DEST="$HOME/.local/bin"
+mkdir -p "$DEST"
+
+TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP"' EXIT
+
+LAZYDOCKER="{{ .packages.linux.binaries.lazydocker }}"
+if [ -x "$DEST/lazydocker" ] \
+    && "$DEST/lazydocker" --version 2>/dev/null | grep -qF "$LAZYDOCKER"; then
+    exit 0
+fi
+
+echo "==> lazydocker $LAZYDOCKER -> $DEST"
+URL="https://github.com/jesseduffield/lazydocker/releases/download/v${LAZYDOCKER}/lazydocker_${LAZYDOCKER}_Linux_${ARCH}.tar.gz"
+curl -fsSL "$URL" -o "$TMP/lazydocker.tar.gz"
+tar -xzf "$TMP/lazydocker.tar.gz" -C "$TMP" lazydocker
+install -m 0755 "$TMP/lazydocker" "$DEST/lazydocker"

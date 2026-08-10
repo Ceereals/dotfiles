@@ -24,9 +24,9 @@ packages:
     aur: []
 
     # Debian servers: explicit, self-contained list — NOT `common` + overrides.
-    # Names are Debian's (fd-find, not fd). Deliberately absent: mise (not in
-    # the archive at all) and lazygit (a TUI, not shell ergonomics) — servers
-    # stay minimal. starship is in, so the prompt over SSH matches the desktop.
+    # Names are Debian's (fd-find, not fd). Deliberately absent: mise and
+    # lazygit — servers stay minimal. starship is in, so the prompt over SSH
+    # matches the desktop; lazydocker comes from `binaries` below.
     # The install script skips anything this release doesn't ship, so adding a
     # package that only exists in a newer Debian is safe.
     apt:
@@ -50,6 +50,11 @@ packages:
       - tmux
       - unzip
       - zoxide
+
+    # Not in any Debian archive: fetched from the upstream release tarball into
+    # ~/.local/bin. Pinned, so run_onchange only re-runs when the version moves.
+    binaries:
+      lazydocker: "0.25.2"
 
   darwin:
     brews:
