@@ -25,6 +25,9 @@ format = "[$hostname]($style) "
 style = "bold {{ $accent }}"
 
 [directory]
+# Explicit, not left to starship's default of bold cyan: that default ignored
+# the accent and left the path blue on a server whose prompt is otherwise yellow.
+style = "bold {{ $accent }}"
 truncation_length = 2
 truncation_symbol = "…/"
 repo_root_style = "bold {{ $accent }}"
