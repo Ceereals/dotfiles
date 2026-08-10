@@ -24,8 +24,9 @@ packages:
     aur: []
 
     # Debian servers: explicit, self-contained list — NOT `common` + overrides.
-    # Names are Debian's (fd-find, not fd) and the tools missing from apt
-    # (starship, mise, lazygit) are deliberately absent: servers stay minimal.
+    # Names are Debian's (fd-find, not fd). Deliberately absent: mise (not in
+    # the archive at all) and lazygit (a TUI, not shell ergonomics) — servers
+    # stay minimal. starship is in, so the prompt over SSH matches the desktop.
     # The install script skips anything this release doesn't ship, so adding a
     # package that only exists in a newer Debian is safe.
     apt:
@@ -45,6 +46,7 @@ packages:
       - neovim
       - ripgrep
       - rsync
+      - starship
       - tmux
       - unzip
       - zoxide
