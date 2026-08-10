@@ -13,6 +13,11 @@ export GTK_THEME=adw-gtk3-dark
 export TERM=ghostty
 {{- end }}
 export EDITOR=nvim
+# Both private bin dirs, like Debian's stock .profile that this file replaces:
+# get.chezmoi.io installs into ~/bin, so dropping it hides chezmoi itself.
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
 export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
