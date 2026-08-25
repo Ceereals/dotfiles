@@ -4,7 +4,9 @@
 #
 #   sudo ~/.local/share/chezmoi/system/macos/power-always-on.sh
 #
-# A batteria resta tutto invariato: -c limita ogni impostazione ad AC Power.
+# -c limita ad AC Power TUTTE le impostazioni tranne una: disablesleep e'
+# un interruttore globale e non e' impostato qui. Se ne occupa
+# ac-sleep-guard.sh, che lo accende e spegne seguendo l'alimentatore.
 set -euo pipefail
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -13,10 +15,6 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 echo "==> Alimentazione da rete (AC)"
-
-# LA riga che conta. Senza display esterno, chiudere il coperchio manda il Mac
-# in sleep comunque: disablesleep e' l'unico interruttore che lo impedisce.
-pmset -c disablesleep 1
 
 # Nessuno sleep di sistema per inattivita'.
 pmset -c sleep 0
@@ -36,6 +34,9 @@ echo
 echo "==> Impostazioni risultanti"
 pmset -g custom
 
+echo
+echo "Il no-sleep a coperchio chiuso lo fornisce ac-sleep-guard.sh: senza quello"
+echo "queste impostazioni da sole non bastano."
 echo
 echo "NOTA: a coperchio chiuso e senza schermo esterno il MacBook resta acceso"
 echo "      con le ventole limitate dalla scocca chiusa. Tienilo d'occhio se ci"
