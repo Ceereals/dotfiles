@@ -2,6 +2,13 @@
 eval "$({{ .brewPrefix }}/bin/brew shellenv)"
 export PATH="{{ .brewPrefix }}/opt/coreutils/libexec/gnubin:{{ .brewPrefix }}/opt/gnu-sed/libexec/gnubin:$PATH"
 export BROWSER=open
+{{- /* Bitwarden desktop fa da SSH agent: tiene le chiavi e firma i commit,
+       come faceva su Omarchy (vedi hypr/autostart.conf). Il socket esiste solo
+       quando l'app gira, ma resta sul disco anche dopo la chiusura: la guardia
+       -S non basta a garantire che risponda, serve avere Bitwarden aperto. */}}
+if [ -S "$HOME/.bitwarden-ssh-agent.sock" ]; then
+    export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+fi
 {{- else if not .isServer -}}
 export BROWSER=firefox
 export QT_QPA_PLATFORMTHEME="qt5ct"

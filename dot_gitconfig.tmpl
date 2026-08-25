@@ -1,0 +1,61 @@
+{{- /* Identita' da ~/.config/chezmoi/chezmoi.toml (locale, non nel repo). */ -}}
+[user]
+	name = {{ .gitName }}
+	email = {{ .gitEmail }}
+{{- if .gitSigningKey }}
+	signingkey = {{ .gitSigningKey }}
+{{- end }}
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = nvim
+	pager = less -FRX
+
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true
+[rebase]
+	autoStash = true
+
+[merge]
+	conflictstyle = zdiff3
+[diff]
+	algorithm = histogram
+	colorMoved = default
+[rerere]
+	enabled = true
+
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+
+[alias]
+	s = status --short --branch
+	lg = log --oneline --graph --decorate -20
+	last = show --stat HEAD
+{{ if .gitSigningKey }}
+{{- /* Firma con la chiave SSH tenuta da Bitwarden, non con GPG. */}}
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+{{ else }}
+{{- /* Nessuna chiave configurata: firma spenta, altrimenti ogni commit fallisce.
+       Riattivala con:  chezmoi init --promptString "git signing key=ssh-ed25519 AAAA..." */}}
+[commit]
+	gpgsign = false
+{{ end -}}
+{{ if .isDarwin }}
+[credential]
+	helper = osxkeychain
+{{- end }}

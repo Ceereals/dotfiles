@@ -21,6 +21,16 @@
 {{- if $isLinux -}}
 {{-   $isServer = promptBoolOnce . "isServer" "server headless" $isServer -}}
 {{- end -}}
+{{- /* Identita' git. Il repo dotfiles e' PUBBLICO, quindi nome/email/chiave non
+       possono stare in un template committato: promptStringOnce li chiede una
+       volta sola e li congela in ~/.config/chezmoi/chezmoi.toml, che resta
+       locale. Come per isServer, senza TTY vince il default e nulla blocca.
+       Preseed: chezmoi init --promptString "git email=tu@example.com" */ -}}
+{{- $gitName := promptStringOnce . "gitName" "git name" "" -}}
+{{- $gitEmail := promptStringOnce . "gitEmail" "git email" "" -}}
+{{- /* Chiave pubblica SSH usata per firmare i commit (la serve Bitwarden).
+       Vuota = firma disattivata, cosi' il gitconfig resta valido comunque. */ -}}
+{{- $gitSigningKey := promptStringOnce . "gitSigningKey" "git signing key" "" -}}
 {{- $brewPrefix := "/opt/homebrew" -}}
 {{- if and $isDarwin (eq .chezmoi.arch "amd64") -}}
 {{-   $brewPrefix = "/usr/local" -}}
@@ -36,6 +46,9 @@ encryption = ""
     isServer = {{ $isServer }}
     hasOmarchy = {{ $hasOmarchy }}
     brewPrefix = {{ $brewPrefix | quote }}
+    gitName = {{ $gitName | quote }}
+    gitEmail = {{ $gitEmail | quote }}
+    gitSigningKey = {{ $gitSigningKey | quote }}
 
 [data.font]
     family = "JetBrainsMono Nerd Font"
