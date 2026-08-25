@@ -1,41 +1,37 @@
-# AeroSpace — il sostituto di Hyprland su macOS.
-# Modificatore principale: alt (Option). Su macOS cmd e' monopolizzato dalle app,
-# quindi alt prende il posto che SUPER aveva in Hyprland.
+# AeroSpace — Hyprland di Omarchy portato su macOS.
+# Allineato ai default di Omarchy v4.0.1 (default/hypr/bindings/*.lua).
 #
-# NB: l'Option DESTRO resta libero per gli accenti (vedi ~/.config/karabiner).
-# AeroSpace non distingue destro/sinistro, ma Karabiner intercetta prima
-# ralt+vocale, quindi in pratica non si pestano i piedi.
+# Traduzione dei modificatori:
+#   Omarchy SUPER          -> alt      (su macOS cmd e' monopolizzato dalle app)
+#   Omarchy ALT secondario -> ctrl     (alt e' gia' preso da SUPER)
+#
+# I nomi dei tasti di AeroSpace sono POSIZIONI sulla QWERTY US, non caratteri.
+# Su questa tastiera fisica italiana:
+#   slash -> -    rightSquareBracket -> +    backtick -> <
+#   minus -> '    equal -> ì               semicolon -> ò
+# Dove Omarchy usa code:20/21 (i tasti - e = della US) qui servono i tasti
+# fisici - e + , cioe' 'slash' e 'rightSquareBracket'.
 
-# In v1 questa riga mancava e AeroSpace assumeva 1. La v2 cambia UNA cosa che
-# ci riguarda: i workspace persistenti non sono piu' dedotti dai keybinding,
-# il fallback diventa una lista vuota. Vedi persistent-workspaces sotto.
 config-version = 2
 
 after-login-command = []
 after-startup-command = []
 start-at-login = true
-
-# Ricarica da sola quando salvo questo file (serve un reload manuale la prima
-# volta per far partire il watcher).
 auto-reload-config = true
 
-# Con config-version = 2 vanno dichiarati a mano: senza, i workspace vuoti
-# spariscono invece di restare pronti sotto alt-1..9 come in v1.
+# Con config-version = 2 i workspace persistenti non sono piu' dedotti dai
+# keybinding: senza questa riga quelli vuoti sparirebbero.
 persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-# Come Hyprland dwindle: le nuove finestre si affiancano.
 accordion-padding = 0
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
-# macOS riattiva le finestre in modo imprevedibile: questo tiene il focus
-# coerente con quello che AeroSpace crede sia attivo.
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 key-mapping.preset = 'qwerty'
 
-# Equivalente di gaps_in / gaps_out di Hyprland.
 # Chiavi puntate, NON una tabella [gaps]: un header [gaps] si mangerebbe
 # tutte le chiavi top-level scritte dopo di lui.
 gaps.inner.horizontal = 8
@@ -47,46 +43,47 @@ gaps.outer.bottom = 8
 
 [mode.main.binding]
 
-# --- Applicazioni (specchio di bindings.conf di Hyprland) ---
+# ---------------------------------------------------------------- applicazioni
+# Omarchy: SUPER+RETURN terminale, SUPER+ALT+RETURN tmux,
+#          SUPER+SHIFT+RETURN browser.
 alt-enter = 'exec-and-forget open -na Ghostty'
-alt-shift-enter = '''exec-and-forget open -na Ghostty --args -e bash -lc "tmux attach || tmux new -s Work"'''
+alt-ctrl-enter = '''exec-and-forget open -na Ghostty --args -e bash -lc "tmux attach || tmux new -s Work"'''
+alt-shift-enter = 'exec-and-forget open -a Firefox'
+
 alt-shift-b = 'exec-and-forget open -a Firefox'
+alt-shift-f = 'exec-and-forget open -a Finder'
 alt-shift-n = 'exec-and-forget open -a "Visual Studio Code"'
 alt-shift-o = 'exec-and-forget open -a Obsidian'
-alt-shift-f = 'exec-and-forget open -a Finder'
-alt-shift-p = 'exec-and-forget open -a Bitwarden'   # P come Password
 alt-shift-d = '''exec-and-forget open -na Ghostty --args -e lazydocker'''
+# Omarchy: SUPER+SHIFT+SLASH = gestore password. Qui e' il tasto fisico -.
+alt-shift-slash = 'exec-and-forget open -a Bitwarden'
 
-# --- Focus (hjkl come in Hyprland/vim) ---
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+# ------------------------------------------------------------------ focus
+# Omarchy v4 usa le FRECCE, non hjkl: SUPER+J e SUPER+L sono occupati da
+# "toggle split" e "toggle workspace layout".
+alt-left = 'focus left'
+alt-down = 'focus down'
+alt-up = 'focus up'
+alt-right = 'focus right'
 
-# --- Sposta la finestra ---
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+# Omarchy: SUPER+SHIFT+frecce scambia la finestra con la vicina.
+alt-shift-left = 'move left'
+alt-shift-down = 'move down'
+alt-shift-up = 'move up'
+alt-shift-right = 'move right'
 
-# --- Resize ---
-# ATTENZIONE: i nomi dei tasti di AeroSpace sono POSIZIONI sulla QWERTY US,
-# non caratteri. Su questa tastiera fisica italiana finiscono altrove:
-#   minus -> '    equal -> ì    slash -> -    rightSquareBracket -> +
-#   semicolon -> ò    quote -> à    backtick -> <    leftSquareBracket -> è
-# Quindi 'slash' e 'rightSquareBracket' sono i tasti fisici - e + : i piu'
-# ovvi per rimpicciolire e ingrandire.
-alt-slash = 'resize smart -50'              # tasto fisico -
-alt-rightSquareBracket = 'resize smart +50' # tasto fisico +
-
-# --- Layout ---
-alt-v = 'layout floating tiling'      # come SUPER+V: togli/rimetti in tiling
-alt-f = 'fullscreen'
-alt-period = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+# --------------------------------------------------------------- finestre
 alt-w = 'close'
+alt-t = 'layout floating tiling'   # Omarchy: SUPER+T
+alt-f = 'fullscreen'               # Omarchy: SUPER+F
+alt-j = 'layout horizontal vertical'  # Omarchy: SUPER+J, toggle split
+alt-l = 'layout tiles accordion'      # Omarchy: SUPER+L, toggle layout workspace
 
-# --- Workspace (AeroSpace ha i suoi, non gli Spaces di macOS) ---
+# Omarchy: SUPER+code:20/21, cioe' i tasti - e = . Qui - e + fisici.
+alt-slash = 'resize smart -50'
+alt-rightSquareBracket = 'resize smart +50'
+
+# ------------------------------------------------------------- workspace
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
@@ -107,20 +104,26 @@ alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 
-alt-tab = 'workspace-back-and-forth'
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+# Omarchy: SUPER+TAB avanti, SUPER+SHIFT+TAB indietro,
+#          SUPER+CTRL+TAB torna all'ultimo usato.
+alt-tab = 'workspace --wrap-around next'
+alt-shift-tab = 'workspace --wrap-around prev'
+alt-ctrl-tab = 'workspace-back-and-forth'
 
-# Modalita' "service" per le cose rare. 'backtick' e' il tasto fisico < a
-# sinistra dello shift: raggiungibile col mignolo senza chord a tre tasti.
+# Omarchy: SUPER+SHIFT+ALT+frecce sposta il workspace di monitor.
+alt-shift-ctrl-left = 'move-workspace-to-monitor --wrap-around prev'
+alt-shift-ctrl-right = 'move-workspace-to-monitor --wrap-around next'
+
+# Modalita' service: AeroSpace non ha equivalente in Omarchy. 'backtick' e' il
+# tasto fisico < a sinistra dello shift.
 alt-backtick = 'mode service'
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main']   # resetta il layout
+r = ['flatten-workspace-tree', 'mode main']
 f = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
 
-# --- App che NON devono essere piastrellate ---
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
 run = 'layout floating'
