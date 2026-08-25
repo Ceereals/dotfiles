@@ -36,6 +36,16 @@ sudo systemctl restart greetd   # never from the active graphical session — it
   Su Mac Intel il percorso del modulo e' `/usr/local/lib/pam/pam_reattach.so`.
   Via ssh non c'e' sensore: `sudo` torna a chiedere la password, come deve.
 
+- `macos/set-hostname.sh` — allinea ComputerName, LocalHostName e HostName.
+  *(macOS)*
+
+  ```sh
+  sudo ~/.local/share/chezmoi/system/macos/set-hostname.sh mbp
+  ```
+
+  Senza `HostName` impostato macOS lo eredita dal DHCP, e prompt e hostname
+  cambiano al cambiare di rete.
+
 - `macos/power-always-on.sh` — niente sleep con l'alimentatore attaccato, anche a
   coperchio chiuso, così il Mac resta raggiungibile via ssh. *(macOS)*
 
