@@ -68,14 +68,25 @@ packages:
       - gnu-sed
       - lazydocker
       - pinentry-mac
+    # Tap extra necessari prima dei cask qui sotto.
+    taps:
+      - nikitabobko/tap
+
     casks:
       - ghostty
       - font-jetbrains-mono-nerd-font
-      - aerospace
-      - karabiner-elements
+      # AeroSpace non e' in homebrew/cask: vive nel tap qui sopra.
+      - nikitabobko/tap/aerospace
       - raycast
       - firefox
       - visual-studio-code
-      - docker-desktop
       - obsidian
       - localsend
+      - bitwarden
+      - kde-connect
+
+    # Cask con installer .pkg: chiedono la password di root, quindi non
+    # possono girare in uno script non interattivo. Vanno lanciati a mano.
+    casks_sudo:
+      - karabiner-elements
+      - docker-desktop

@@ -15,15 +15,35 @@ if ! command -v brew >/dev/null 2>&1; then
     fi
 fi
 
+echo "==> Tap"
+{{ range .packages.darwin.taps }}brew tap --quiet {{ . | quote }} || true
+{{ end }}
 echo "==> Installo formulae"
 brew install --quiet \
 {{ range (concat .packages.common .packages.darwin.brews) }}    {{ . | quote }} \
 {{ end }}    || true
 
+# I cask si installano UNO PER UNO: in batch, il primo che fallisce aborta
+# tutto il resto e il `|| true` finale nasconde il problema.
 echo "==> Installo cask"
-brew install --cask --quiet \
-{{ range .packages.darwin.casks }}    {{ . | quote }} \
-{{ end }}    || true
+failed=()
+{{ range .packages.darwin.casks }}brew install --cask --quiet {{ . | quote }} || failed+=({{ . | quote }})
+{{ end }}
+if [ ${#failed[@]} -gt 0 ]; then
+    echo "!! Cask falliti: ${failed[*]}"
+fi
+
+# Questi hanno un installer .pkg che invoca sudo: in uno script non interattivo
+# sudo non ha un terminale da cui leggere la password e fallisce sempre.
+# Li segnaliamo soltanto.
+missing_sudo=()
+{{ range .packages.darwin.casks_sudo }}brew list --cask {{ . | quote }} >/dev/null 2>&1 || missing_sudo+=({{ . | quote }})
+{{ end }}
+if [ ${#missing_sudo[@]} -gt 0 ]; then
+    echo
+    echo "==> Da installare a mano (chiedono la password):"
+    echo "    brew install --cask ${missing_sudo[*]}"
+fi
 
 echo "==> Cleanup"
 brew cleanup --quiet || true

@@ -32,7 +32,10 @@ keybind = super+control+shift+alt+arrow_right=resize_split:right,100
 mouse-scroll-multiplier = 0.95
 
 {{ if .isDarwin -}}
-macos-option-as-alt = true
+# Solo l'Option SINISTRO fa da Alt/Meta nel terminale.
+# Il destro resta un normale Option, cosi' Karabiner puo' usarlo per gli
+# accenti IT (ralt+a -> a') anche dentro Ghostty.
+macos-option-as-alt = left
 macos-titlebar-style = tabs
 macos-non-native-fullscreen = true
 window-decoration = true

@@ -1,0 +1,132 @@
+# AeroSpace — il sostituto di Hyprland su macOS.
+# Modificatore principale: alt (Option). Su macOS cmd e' monopolizzato dalle app,
+# quindi alt prende il posto che SUPER aveva in Hyprland.
+#
+# NB: l'Option DESTRO resta libero per gli accenti (vedi ~/.config/karabiner).
+# AeroSpace non distingue destro/sinistro, ma Karabiner intercetta prima
+# ralt+vocale, quindi in pratica non si pestano i piedi.
+
+# In v1 questa riga mancava e AeroSpace assumeva 1. La v2 cambia UNA cosa che
+# ci riguarda: i workspace persistenti non sono piu' dedotti dai keybinding,
+# il fallback diventa una lista vuota. Vedi persistent-workspaces sotto.
+config-version = 2
+
+after-login-command = []
+after-startup-command = []
+start-at-login = true
+
+# Ricarica da sola quando salvo questo file (serve un reload manuale la prima
+# volta per far partire il watcher).
+auto-reload-config = true
+
+# Con config-version = 2 vanno dichiarati a mano: senza, i workspace vuoti
+# spariscono invece di restare pronti sotto alt-1..9 come in v1.
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+# Come Hyprland dwindle: le nuove finestre si affiancano.
+accordion-padding = 0
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# macOS riattiva le finestre in modo imprevedibile: questo tiene il focus
+# coerente con quello che AeroSpace crede sia attivo.
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = true
+
+key-mapping.preset = 'qwerty'
+
+# Equivalente di gaps_in / gaps_out di Hyprland.
+# Chiavi puntate, NON una tabella [gaps]: un header [gaps] si mangerebbe
+# tutte le chiavi top-level scritte dopo di lui.
+gaps.inner.horizontal = 8
+gaps.inner.vertical = 8
+gaps.outer.left = 8
+gaps.outer.right = 8
+gaps.outer.top = 8
+gaps.outer.bottom = 8
+
+[mode.main.binding]
+
+# --- Applicazioni (specchio di bindings.conf di Hyprland) ---
+alt-enter = 'exec-and-forget open -na Ghostty'
+alt-shift-enter = '''exec-and-forget open -na Ghostty --args -e bash -lc "tmux attach || tmux new -s Work"'''
+alt-shift-b = 'exec-and-forget open -a Firefox'
+alt-shift-n = 'exec-and-forget open -a "Visual Studio Code"'
+alt-shift-o = 'exec-and-forget open -a Obsidian'
+alt-shift-f = 'exec-and-forget open -a Finder'
+alt-shift-slash = 'exec-and-forget open -a Bitwarden'
+alt-shift-d = '''exec-and-forget open -na Ghostty --args -e lazydocker'''
+
+# --- Focus (hjkl come in Hyprland/vim) ---
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# --- Sposta la finestra ---
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# --- Resize ---
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+# --- Layout ---
+alt-v = 'layout floating tiling'      # come SUPER+V: togli/rimetti in tiling
+alt-f = 'fullscreen'
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+alt-w = 'close'
+
+# --- Workspace (AeroSpace ha i suoi, non gli Spaces di macOS) ---
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# Modalita' "service" per le cose rare: alt-shift-semicolon poi il tasto.
+alt-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']   # resetta il layout
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
+
+# --- App che NON devono essere piastrellate ---
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+if.window-title-regex-substring = 'Copy'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.raycast.macos'
+run = 'layout floating'

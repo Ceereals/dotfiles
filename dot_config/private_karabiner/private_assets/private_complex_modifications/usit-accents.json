@@ -1,0 +1,336 @@
+{
+  "title": "usit — accenti italiani su Option destro",
+  "rules": [
+    {
+      "description": "Accenti IT su Option destro (à è ì ò ù é) — porta di ~/.config/xkb/symbols/usit",
+      "manipulators": [
+        {
+          "type": "basic",
+          "description": "right_option + a -> à",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "a"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + shift + a -> À",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "right_option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "a",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + e -> è",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "e"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + shift + e -> È",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "right_option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "e",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + i -> ì",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": [
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "i"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + shift + i -> Ì",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": [
+                "right_option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "i",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + o -> ò",
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "mandatory": [
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "o"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + shift + o -> Ò",
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "mandatory": [
+                "right_option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "o",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + u -> ù",
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": [
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "u"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + shift + u -> Ù",
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": [
+                "right_option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "u",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + quote -> é",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "e"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "right_option + shift + quote -> É",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "right_option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "e",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Caps Lock: tap = Escape, tenuto = Control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
