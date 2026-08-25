@@ -67,6 +67,8 @@ packages:
       - coreutils
       - gnu-sed
       - lazydocker
+      # Touch ID per sudo dentro tmux: vedi system/etc/pam.d/sudo_local
+      - pam-reattach
       - pinentry-mac
     # Tap extra necessari prima dei cask qui sotto.
     taps:

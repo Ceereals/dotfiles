@@ -1,0 +1,19 @@
+# /etc/pam.d/sudo_local — Touch ID al posto della password per sudo.
+#
+# /etc/pam.d/sudo include questo file come PRIMA riga, e sopravvive agli
+# aggiornamenti di macOS (a differenza di /etc/pam.d/sudo, che viene
+# sovrascritto).
+#
+# L'ordine delle due righe non e' negoziabile: pam_reattach deve venire prima.
+
+# Senza questo, Touch ID non funziona dentro tmux (ne' screen). I processi in
+# una sessione tmux non appartengono alla GUI session di Aqua, e pam_tid non
+# riesce a mostrare il prompt: sudo cade sulla password senza spiegare perche'.
+# pam_reattach riaggancia il processo alla sessione grafica dell'utente.
+# 'optional': se il modulo manca o e' rotto, sudo continua a funzionare.
+auth       optional       /opt/homebrew/lib/pam/pam_reattach.so
+
+# 'sufficient': se Touch ID riesce, si entra. Se fallisce o non e' disponibile
+# — per esempio via ssh, dove non c'e' sensore — si prosegue con
+# pam_opendirectory, cioe' la password di sempre.
+auth       sufficient     pam_tid.so
