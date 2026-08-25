@@ -54,7 +54,7 @@ alt-shift-b = 'exec-and-forget open -a Firefox'
 alt-shift-n = 'exec-and-forget open -a "Visual Studio Code"'
 alt-shift-o = 'exec-and-forget open -a Obsidian'
 alt-shift-f = 'exec-and-forget open -a Finder'
-alt-shift-slash = 'exec-and-forget open -a Bitwarden'
+alt-shift-p = 'exec-and-forget open -a Bitwarden'   # P come Password
 alt-shift-d = '''exec-and-forget open -na Ghostty --args -e lazydocker'''
 
 # --- Focus (hjkl come in Hyprland/vim) ---
@@ -70,13 +70,19 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # --- Resize ---
-alt-minus = 'resize smart -50'
-alt-equal = 'resize smart +50'
+# ATTENZIONE: i nomi dei tasti di AeroSpace sono POSIZIONI sulla QWERTY US,
+# non caratteri. Su questa tastiera fisica italiana finiscono altrove:
+#   minus -> '    equal -> ì    slash -> -    rightSquareBracket -> +
+#   semicolon -> ò    quote -> à    backtick -> <    leftSquareBracket -> è
+# Quindi 'slash' e 'rightSquareBracket' sono i tasti fisici - e + : i piu'
+# ovvi per rimpicciolire e ingrandire.
+alt-slash = 'resize smart -50'              # tasto fisico -
+alt-rightSquareBracket = 'resize smart +50' # tasto fisico +
 
 # --- Layout ---
 alt-v = 'layout floating tiling'      # come SUPER+V: togli/rimetti in tiling
 alt-f = 'fullscreen'
-alt-slash = 'layout tiles horizontal vertical'
+alt-period = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 alt-w = 'close'
 
@@ -104,8 +110,9 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-# Modalita' "service" per le cose rare: alt-shift-semicolon poi il tasto.
-alt-shift-semicolon = 'mode service'
+# Modalita' "service" per le cose rare. 'backtick' e' il tasto fisico < a
+# sinistra dello shift: raggiungibile col mignolo senza chord a tre tasti.
+alt-backtick = 'mode service'
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
