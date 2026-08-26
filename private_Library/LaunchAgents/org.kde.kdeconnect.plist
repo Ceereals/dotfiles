@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- KDE Connect non espone un "avvia al login" suo, e il cask non registra
+	     nessun LaunchAgent: senza questo il telefono resta scollegato finche'
+	     non apri l'app a mano. -->
+	<key>Label</key>
+	<string>org.kde.kdeconnect</string>
+
+	<!-- Si lancia il bundle con `open`, non kdeconnectd: il demone da solo non
+	     porta su l'indicatore in menu bar, e launchd non gli darebbe il
+	     contesto di sessione grafica che a Qt serve. `open` esce subito, quindi
+	     niente KeepAlive: sarebbe un loop di riavvii. -->
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/open</string>
+		<string>-a</string>
+		<string>/Applications/KDE Connect.app</string>
+	</array>
+
+	<key>RunAtLoad</key>
+	<true/>
+</dict>
+</plist>
