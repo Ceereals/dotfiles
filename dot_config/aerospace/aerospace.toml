@@ -48,9 +48,9 @@ gaps.outer.bottom = 8
 #          SUPER+SHIFT+RETURN browser.
 alt-enter = 'exec-and-forget open -na Ghostty'
 alt-ctrl-enter = '''exec-and-forget open -na Ghostty --args -e bash -lc "tmux attach || tmux new -s Work"'''
-alt-shift-enter = 'exec-and-forget open -a Firefox'
+alt-shift-enter = 'exec-and-forget open -a "Google Chrome"'
 
-alt-shift-b = 'exec-and-forget open -a Firefox'
+alt-shift-b = 'exec-and-forget open -a "Google Chrome"'
 alt-shift-f = 'exec-and-forget open -a Finder'
 alt-shift-n = 'exec-and-forget open -a "Visual Studio Code"'
 alt-shift-o = 'exec-and-forget open -a Obsidian'

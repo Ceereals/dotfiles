@@ -80,6 +80,8 @@ packages:
       # AeroSpace non e' in homebrew/cask: vive nel tap qui sopra.
       - nikitabobko/tap/aerospace
       - raycast
+      # Browser primario: e' quello che AeroSpace apre su alt-shift-enter.
+      - google-chrome
       - firefox
       - visual-studio-code
       - obsidian
