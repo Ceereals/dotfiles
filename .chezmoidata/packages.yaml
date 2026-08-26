@@ -88,6 +88,10 @@ packages:
       - localsend
       - bitwarden
       - kde-connect
+      # Storico degli appunti, nativo e MIT: CopyQ e' Qt e troppo denso.
+      - maccy
+      # Dettatura push-to-talk, whisper in locale: niente audio verso il cloud.
+      - handy
 
     # Cask con installer .pkg: chiedono la password di root, quindi non
     # possono girare in uno script non interattivo. Vanno lanciati a mano.
