@@ -50,9 +50,11 @@ echo "==> Spaces / Mission Control"
 # CRITICO con AeroSpace: senza questo macOS riordina gli Spaces per uso recente
 # e i numeri di workspace ballano sotto le dita.
 defaults write com.apple.dock mru-spaces -bool false
-# Un solo Space che copre tutti i monitor (invece di Spaces separati per schermo):
-# e' il comportamento che ti aspetti venendo da Hyprland. RICHIEDE LOGOUT.
-defaults write com.apple.spaces spans-displays -bool true
+# "Displays have separate Spaces" ACCESO (spans-displays = false).
+# Invertito rispetto a prima: OmniWM lo pretende e sospende la gestione delle
+# finestre finche' non lo trova attivo. Con un solo schermo non cambia nulla in
+# pratica. RICHIEDE LOGOUT.
+defaults write com.apple.spaces spans-displays -bool false
 # Non passare automaticamente allo Space dove l'app e' gia' aperta.
 defaults write -g AppleSpacesSwitchOnActivate -bool false
 
