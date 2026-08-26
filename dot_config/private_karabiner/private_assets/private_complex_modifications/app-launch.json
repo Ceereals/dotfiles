@@ -6,43 +6,155 @@
       "manipulators": [
         {
           "type": "basic",
-          "from": { "key_code": "return_or_enter", "modifiers": { "mandatory": ["option", "shift"] } },
-          "to": [ { "shell_command": "open -a 'Google Chrome'" } ]
+          "from": {
+            "key_code": "return_or_enter",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -na Ghostty"
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "return_or_enter", "modifiers": { "mandatory": ["option", "control"] } },
-          "to": [ { "shell_command": "open -na Ghostty --args -e bash -lc 'tmux attach || tmux new -s Work'" } ]
+          "from": {
+            "key_code": "return_or_enter",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Google Chrome'"
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "b", "modifiers": { "mandatory": ["option", "shift"] } },
-          "to": [ { "shell_command": "open -a 'Google Chrome'" } ]
+          "from": {
+            "key_code": "return_or_enter",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -na Ghostty --args -e bash -lc 'tmux attach || tmux new -s Work'"
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "f", "modifiers": { "mandatory": ["option", "shift"] } },
-          "to": [ { "shell_command": "open -a Finder" } ]
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Google Chrome'"
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "n", "modifiers": { "mandatory": ["option", "shift"] } },
-          "to": [ { "shell_command": "open -a 'Visual Studio Code'" } ]
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a Finder"
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "o", "modifiers": { "mandatory": ["option", "shift"] } },
-          "to": [ { "shell_command": "open -a Obsidian" } ]
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Visual Studio Code'"
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "d", "modifiers": { "mandatory": ["option", "shift"] } },
-          "to": [ { "shell_command": "open -na Ghostty --args -e lazydocker" } ]
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a Obsidian"
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "slash", "modifiers": { "mandatory": ["option", "shift"] } },
-          "to": [ { "shell_command": "open -a Bitwarden" } ]
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -na Ghostty --args -e lazydocker"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a Bitwarden"
+            }
+          ]
         }
       ]
     }
