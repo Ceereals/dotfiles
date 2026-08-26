@@ -242,6 +242,27 @@ id = "552FB77D-BF0E-4737-90A6-B5BC6986C579"
 minHeight = 320.0
 minWidth = 660.0
 
+[[appRules]]
+bundleId = "com.apple.systempreferences"
+id = "23EEF2D6-22C2-4C4E-8B1B-BBCDA4B4E8A2"
+layout = "float"
+
+[[appRules]]
+bundleId = "com.apple.finder"
+id = "AFB75408-3803-42F0-AACA-049850EB40C1"
+layout = "float"
+titleSubstring = "Copy"
+
+[[appRules]]
+bundleId = "com.bitwarden.desktop"
+id = "4F5C66E0-40D9-4E67-AE9F-B8ECB6C3E94A"
+layout = "float"
+
+[[appRules]]
+bundleId = "com.raycast.macos"
+id = "B5340FE3-9398-4A6A-8155-DC39FE68675C"
+layout = "float"
+
 [[hotkeys]]
 binding = "Option+1"
 id = "switchWorkspace.0"
@@ -735,7 +756,7 @@ binding = "Option+Shift+Equal"
 id = "setWindowSecondarySpan.increase10Percent"
 
 [[hotkeys]]
-binding = "Option+Shift+B"
+binding = "Control+Option+B"
 id = "balanceSizes"
 
 [[hotkeys]]
@@ -839,7 +860,7 @@ binding = "Option+L"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]
-binding = "Option+Shift+O"
+binding = "Control+Option+O"
 id = "toggleOverview"
 
 [[hotkeys]]
