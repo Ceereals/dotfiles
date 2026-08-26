@@ -10,13 +10,13 @@ mode = "dark"
 
 [borders]
 enabled = true
-width = 5.0
+width = 2.0
 
 [borders.color]
 alpha = 1.0
-blue = 0.979300037944676
-green = 1.0
-red = 0.08458520228437894
+blue = 1.0
+green = 0.6656078100204468
+red = 0.47400492429733276
 
 [clipboard]
 historyEnabled = false
@@ -43,13 +43,13 @@ raiseOnMouseFocus = false
 
 [gaps]
 fullscreenUsesOuterGaps = false
-size = 16.0
+size = 8.0
 
 [gaps.outer]
-bottom = 0.0
-left = 0.0
-right = 0.0
-top = 0.0
+bottom = 8.0
+left = 8.0
+right = 8.0
+top = 8.0
 
 [general]
 animationsEnabled = true
@@ -148,7 +148,7 @@ deduplicateAppIcons = false
 enabled = true
 excludedBundleIDs = []
 height = 24.0
-hideEmptyWorkspaces = false
+hideEmptyWorkspaces = true
 notchActiveZoneWidth = 180.0
 notchMode = "moveBelowMenuBar"
 position = "overlappingMenuBar"
