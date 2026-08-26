@@ -9,7 +9,8 @@ echo "==> Tastiera"
 defaults write -g KeyRepeat -int 2
 defaults write -g InitialKeyRepeat -int 15
 # Il menu degli accenti che compare tenendo premuto un tasto rompe hjkl in vim.
-# Spento: gli accenti IT li fa Karabiner su Option destro.
+# Spento senza contropartite: su tastiera ISO italiana a/e/i/o/u accentate
+# sono tasti fisici.
 defaults write -g ApplePressAndHoldEnabled -bool false
 # Niente correzioni "intelligenti" che sabotano il codice.
 defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -47,8 +48,8 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
 echo "==> Spaces / Mission Control"
-# CRITICO con AeroSpace: senza questo macOS riordina gli Spaces per uso recente
-# e i numeri di workspace ballano sotto le dita.
+# Senza questo macOS riordina gli Spaces per uso recente. OmniWM usa workspace
+# suoi, ma l'ordine degli Spaces nativi resta sotto e conviene tenerlo fermo.
 defaults write com.apple.dock mru-spaces -bool false
 # "Displays have separate Spaces" ACCESO (spans-displays = false).
 # Invertito rispetto a prima: OmniWM lo pretende e sospende la gestione delle

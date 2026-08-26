@@ -33,8 +33,6 @@ docs/**
 .zprofile
 .bash_profile
 .Brewfile
-.config/aerospace
-.config/aerospace/**
 .config/karabiner
 .config/karabiner/**
 Library

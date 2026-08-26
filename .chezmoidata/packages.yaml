@@ -72,16 +72,12 @@ packages:
       - pinentry-mac
     # Tap extra necessari prima dei cask qui sotto.
     taps:
-      - nikitabobko/tap
       - BarutSRB/tap
 
     casks:
       - ghostty
       - font-jetbrains-mono-nerd-font
-      # AeroSpace non e' in homebrew/cask: vive nel tap qui sopra.
-      - nikitabobko/tap/aerospace
       - raycast
-      # Browser primario: e' quello che AeroSpace apre su alt-shift-enter.
       - google-chrome
       - firefox
       - visual-studio-code
