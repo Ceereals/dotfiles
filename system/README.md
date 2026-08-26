@@ -45,30 +45,3 @@ sudo systemctl restart greetd   # never from the active graphical session — it
 
   Senza `HostName` impostato macOS lo eredita dal DHCP, e prompt e hostname
   cambiano al cambiare di rete.
-
-- `macos/power-always-on.sh` — niente sleep con l'alimentatore attaccato, anche a
-  coperchio chiuso, così il Mac resta raggiungibile via ssh. *(macOS)*
-
-  ```sh
-  sudo ~/.local/share/chezmoi/system/macos/power-always-on.sh
-  ```
-
-  Annulla con `sudo pmset -c sleep 1 && sudo pmset -c disksleep 10`.
-
-- `macos/ac-sleep-guard.sh` + `etc/LaunchDaemons/local.ac-sleep-guard.plist` —
-  il pezzo che rende il no-sleep condizionato all'alimentatore. *(macOS)*
-
-  `disablesleep` NON e' per-sorgente: `pmset -c disablesleep 1` sembra
-  limitarlo ad AC ma scrive un flag globale, e il Mac resterebbe sveglio anche
-  a batteria a coperchio chiuso. Questo daemon lo allinea alla sorgente.
-
-  ```sh
-  sudo install -m 755 ~/.local/share/chezmoi/system/macos/ac-sleep-guard.sh /usr/local/bin/
-  sudo install -m 644 -o root -g wheel \
-      ~/.local/share/chezmoi/system/etc/LaunchDaemons/local.ac-sleep-guard.plist \
-      /Library/LaunchDaemons/
-  sudo launchctl bootstrap system /Library/LaunchDaemons/local.ac-sleep-guard.plist
-  ```
-
-  Disinstalla con `sudo launchctl bootout system/local.ac-sleep-guard` e
-  `sudo pmset -a disablesleep 0`.
