@@ -71,8 +71,7 @@ packages:
       - pam-reattach
       - pinentry-mac
     # Tap extra necessari prima dei cask qui sotto.
-    taps:
-      - BarutSRB/tap
+    taps: []
 
     casks:
       - ghostty
@@ -89,15 +88,8 @@ packages:
       - maccy
       # Dettatura push-to-talk, whisper in locale: niente audio verso il cloud.
       - handy
-      # Window manager: layout dwindle come Hyprland, niente SIP da disabilitare.
-      # Homebrew pretende un trust esplicito per i cask di tap terzi, e in uno
-      # script non interattivo non lo puo' chiedere: la prima installazione su
-      # una macchina nuova va fatta a mano con
-      #   brew trust --cask BarutSRB/tap/omniwm && brew install --cask omniwm
-      - omniwm
 
     # Cask con installer .pkg: chiedono la password di root, quindi non
     # possono girare in uno script non interattivo. Vanno lanciati a mano.
     casks_sudo:
-      - karabiner-elements
       - docker-desktop

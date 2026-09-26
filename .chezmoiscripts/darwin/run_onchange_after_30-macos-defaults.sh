@@ -48,13 +48,11 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
 echo "==> Spaces / Mission Control"
-# Senza questo macOS riordina gli Spaces per uso recente. OmniWM usa workspace
-# suoi, ma l'ordine degli Spaces nativi resta sotto e conviene tenerlo fermo.
+# Senza questo macOS riordina gli Spaces per uso recente: l'ordine deve restare
+# fermo, o la memoria muscolare "Space 3 = browser" non regge.
 defaults write com.apple.dock mru-spaces -bool false
-# "Displays have separate Spaces" ACCESO (spans-displays = false).
-# Invertito rispetto a prima: OmniWM lo pretende e sospende la gestione delle
-# finestre finche' non lo trova attivo. Con un solo schermo non cambia nulla in
-# pratica. RICHIEDE LOGOUT.
+# "Displays have separate Spaces" ACCESO (spans-displays = false), che e' anche
+# il default di macOS. Con un solo schermo non cambia nulla. RICHIEDE LOGOUT.
 defaults write com.apple.spaces spans-displays -bool false
 # Non passare automaticamente allo Space dove l'app e' gia' aperta.
 defaults write -g AppleSpacesSwitchOnActivate -bool false
