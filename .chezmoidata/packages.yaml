@@ -88,6 +88,18 @@ packages:
       - maccy
       # Dettatura push-to-talk, whisper in locale: niente audio verso il cloud.
       - handy
+      # Senza tiler: Cmd+Tab con l'anteprima delle singole finestre.
+      - alt-tab
+      # CPU/RAM/rete/batteria in menu bar.
+      - stats
+      # Calendario in menu bar, al posto dell'orologio di sistema.
+      - itsycal
+      # Espansione di testo (:mail -> indirizzo). Config in ~/Library/Application Support/espanso.
+      - espanso
+      - iina
+      # docker CLI e daemon: ha sostituito Docker Desktop, che resta sotto finche'
+      # non viene disinstallato a mano.
+      - orbstack
 
     # Cask con installer .pkg: chiedono la password di root, quindi non
     # possono girare in uno script non interattivo. Vanno lanciati a mano.
