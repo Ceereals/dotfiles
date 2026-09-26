@@ -94,6 +94,10 @@ packages:
       - stats
       # Calendario in menu bar, al posto dell'orologio di sistema.
       - itsycal
+      # Menu bar manager, fork mantenuto di Ice (fermo dal 2024). Col notch le
+      # icone in eccesso finiscono dietro la tacca: Thaw le nasconde o le sposta
+      # nella Ice Bar sotto la menu bar.
+      - thaw
       # Espansione di testo (:mail -> indirizzo). Config in ~/Library/Application Support/espanso.
       - espanso
       - iina
