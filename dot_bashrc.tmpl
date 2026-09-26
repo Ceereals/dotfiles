@@ -36,9 +36,12 @@ alias vim='nvim'
 {{ if .isDarwin }}alias o='open'{{ else }}alias o='xdg-open'{{ end }}
 
 command -v mise &>/dev/null && eval "$(mise activate bash)"
-command -v zoxide &>/dev/null && eval "$(zoxide init --cmd cd bash)"
 command -v starship &>/dev/null && eval "$(starship init bash)"
 command -v fzf &>/dev/null && eval "$(fzf --bash)"
+# After starship: starship moves any existing PROMPT_COMMAND into its own
+# STARSHIP_PROMPT_COMMAND, and zoxide's doctor, which only looks at
+# PROMPT_COMMAND, would then warn on every new shell's first cd.
+command -v zoxide &>/dev/null && eval "$(zoxide init --cmd cd bash)"
 {{ end }}
 [ -r "$HOME/.config/remnic/env" ] && set -a && . "$HOME/.config/remnic/env" && set +a
 {{ if .isLinux }}
