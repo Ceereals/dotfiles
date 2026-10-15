@@ -33,6 +33,7 @@ docs/**
 .zprofile
 .bash_profile
 .Brewfile
+.ssh/config
 Library
 Library/**
 {{ end }}
