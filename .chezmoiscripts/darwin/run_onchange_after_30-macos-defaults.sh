@@ -19,6 +19,13 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
 # Tab su TUTTI i controlli nelle finestre, non solo campi di testo.
 defaults write -g AppleKeyboardUIMode -int 3
+# "Sposta lo stato attivo alla finestra successiva" (id 27) esplicito su Cmd+<
+# (carattere 60, keycode 50). Il default di fabbrica e' definito sul backtick
+# della tastiera US e con Italiano Pro non scatta.
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 \
+  '{ enabled = 1; value = { type = standard; parameters = (60, 50, 1048576); }; }'
+# Applica le scorciatoie subito, senza logout.
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 echo "==> Finder"
 defaults write -g AppleShowAllExtensions -bool true
